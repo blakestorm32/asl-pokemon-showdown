@@ -2120,10 +2120,16 @@ export class GameRoom extends BasicRoom {
 	}
 
 	getReplayData() {
-		if (!this.roomid.endsWith('pw')) return { id: this.roomid.slice(7), password: null };
-		const end = this.roomid.length - 2;
-		const lastHyphen = this.roomid.lastIndexOf('-', end);
-		return { id: this.roomid.slice(7, lastHyphen), password: this.roomid.slice(lastHyphen + 1, end) };
+		const id = crypto.randomUUID(); // UUID v4 string
+		let password: string | null = null;
+
+		if (this.roomid.endsWith('pw')) {
+			const end = this.roomid.length - 2;
+			const lastHyphen = this.roomid.lastIndexOf('-', end);
+			password = this.roomid.slice(lastHyphen + 1, end);
+		}
+
+		return { id, password };
 	}
 }
 
