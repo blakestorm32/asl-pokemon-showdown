@@ -434,7 +434,9 @@ exports.loguserstats = 1000 * 60 * 10; // 10 minutes
  */
 exports.inactiveuserthreshold = 1000 * 60 * 60;
 
-exports.replaysdb = process.env.REPLAYSDB_URL || '';
+exports.replaysdb = process.env.REPLAYSDB_URL
+  ? { connectionString: process.env.REPLAYSDB_URL }
+  : null;
 
 /**
  * autolockdown - whether or not to automatically kill the server when it is
