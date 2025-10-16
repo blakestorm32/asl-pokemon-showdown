@@ -434,6 +434,8 @@ exports.loguserstats = 1000 * 60 * 10; // 10 minutes
  */
 exports.inactiveuserthreshold = 1000 * 60 * 60;
 
+exports.replaysdb = process.env.REPLAYSDB_URL || '';
+
 /**
  * autolockdown - whether or not to automatically kill the server when it is
  * in lockdown mode and the final battle finishes.  This is potentially useful
