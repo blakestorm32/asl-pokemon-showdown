@@ -5028,9 +5028,9 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 		natDexTier: "RU",
 	},
 	falinksmega: {
-		isNonstandard: "Future",
+		isNonstandard: "Past",
 		tier: "Illegal",
-		natDexTier: "UU",
+		natDexTier: "RU",
 	},
 	pincurchin: {
 		tier: "ZU",
