@@ -1970,7 +1970,7 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2586,
 		gen: 9,
-		isNonstandard: "Future",
+		isNonstandard: "Past",
 	},
 	fastball: {
 		name: "Fast Ball",
