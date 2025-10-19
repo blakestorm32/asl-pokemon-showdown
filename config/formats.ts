@@ -471,7 +471,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		searchShow: false,
 		teraPreviewDefault: true,
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
-		onValidateSet(set, format, teamHas) {
+		onValidateSet(set) {
 			if (set.moves && set.moves.includes('terablast')) {
 				// Remove any errors about terablast not being in the learnset
 				return [];
