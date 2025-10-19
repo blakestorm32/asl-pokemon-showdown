@@ -459,6 +459,20 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
 	},
 	{
+		name: "[Gen 9] ASL ZA NatDex Draft",
+		mod: 'gen9',
+		searchShow: false,
+		teraPreviewDefault: true,
+		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
+	},
+	{
+		name: "[Gen 9] Mystic ZA NatDex Draft",
+		mod: 'gen9',
+		searchShow: false,
+		teraPreviewDefault: true,
+		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
+	},
+	{
 		name: "[Gen 9] NatDex 6v6 Doubles Draft",
 		mod: 'gen9',
 		gameType: 'doubles',
