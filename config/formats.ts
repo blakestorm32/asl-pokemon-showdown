@@ -470,7 +470,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'mysticnatdexdraft',
 		searchShow: false,
 		teraPreviewDefault: true,
-		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
+		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1', '+SetMove terablast'],
 	},
 	{
 		name: "[Gen 9] NatDex 6v6 Doubles Draft",
