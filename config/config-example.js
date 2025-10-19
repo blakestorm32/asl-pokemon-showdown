@@ -204,7 +204,7 @@ Y929lRybWEiKUr+4Yw2O1W0CAwEAAQ==
  */
 exports.routes = {
 	root: 'pokemonshowdown.com',
-	client: 'https://aslpokemonbattling-up-railway-app.psim.us',
+	client: 'aslpokemonbattling-up-railway-app.psim.us',
 	dex: 'dex.pokemonshowdown.com',
 	replays: 'asl-pokemon-showdown-client-production.up.railway.app',
 };
