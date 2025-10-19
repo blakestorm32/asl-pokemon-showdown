@@ -196,6 +196,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sleeppowder: ["9L15", "8L15", "8V", "7L13", "7V", "6L13", "5L13", "4L13", "3L15"],
 			sleeptalk: ["9M", "8M", "7M", "7V", "6M", "5T", "4M", "3T"],
 			sludgebomb: ["9M", "8M", "8V", "7M", "6M", "5M", "4M", "3M"],
+			sludgewave: ["9M"],
 			snore: ["8M", "7T", "7V", "6T", "5T", "4T", "3T"],
 			solarbeam: ["9M", "9L50", "8M", "8L50", "8V", "7M", "7L44", "7V", "6M", "6L44", "5M", "5L44", "4M", "4L44", "3M", "3L56"],
 			strength: ["6M", "5M", "4M", "3M"],
