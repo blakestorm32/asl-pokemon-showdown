@@ -459,14 +459,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
 	},
 	{
-		name: "[Gen 9] ASL ZA NatDex Draft",
+		name: "[Gen 9] ASL NatDex Draft",
 		mod: 'gen9',
 		searchShow: false,
 		teraPreviewDefault: true,
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
 	},
 	{
-		name: "[Gen 9] Mystic ZA NatDex Draft",
+		name: "[Gen 9] Mystic NatDex Draft",
 		mod: 'gen9',
 		searchShow: false,
 		teraPreviewDefault: true,
