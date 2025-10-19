@@ -203,6 +203,9 @@ export const PokedexText: { [id: IDEntry]: PokedexText } = {
 	clefable: {
 		name: "Clefable",
 	},
+	clefablemega: {
+		name: "Clefable-Mega"
+	},
 	vulpix: {
 		name: "Vulpix",
 	},
