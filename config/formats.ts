@@ -476,6 +476,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 				// Remove any errors about terablast not being in the learnset
 				return [];
 			}
+		}
 	},
 	{
 		name: "[Gen 9] NatDex 6v6 Doubles Draft",
