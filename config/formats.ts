@@ -472,11 +472,15 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		teraPreviewDefault: true,
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
 		onValidateSet(set) {
-			if (set.moves && set.moves.includes('terablast')) {
-				// Remove any errors about terablast not being in the learnset
-				return [];
+		// Allow 'Terablast' for everyone
+		if (set.moves && !set.moves.includes("terablast")) {
+			// no special check, just let validator skip
 			}
-		}
+		},
+		onModifyLearnset(move, species) {
+		// Add "terablast" to everyone's legal learnset
+			if (move.id === "terablast") return {type: "learnable"};
+		},
 	},
 	{
 		name: "[Gen 9] NatDex 6v6 Doubles Draft",
