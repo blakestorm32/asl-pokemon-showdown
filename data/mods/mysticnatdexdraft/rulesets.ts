@@ -1,14 +1,14 @@
 export const Rulesets: import('../../../sim/dex-formats').ModdedFormatDataTable = {
-	teampreview: {
+	terablastlegal: {
 		inherit: true,
-		onBattleStart() {
-			// Xerneas isn't in DLC1 but operated this way pre-1.3.2 update
-			const formesToLeak = ['zaciancrowned', 'zamazentacrowned', 'xerneas'];
-			for (const pokemon of this.getAllPokemon()) {
-				if (!formesToLeak.includes(pokemon.baseSpecies.id)) continue;
-				const newDetails = pokemon.details.replace(', shiny', '');
-				this.add('updatepoke', pokemon, newDetails);
+		onValidateSet(set) {
+		// Allow 'Tera Blast' for everyone
+			if (set.moves && !set.moves.includes("terablast")) {
+			// no special check, just let validator skip
 			}
 		},
-	},
-};
+		onModifyLearnset(move, species) {
+		// Add "Tera Blast" to everyone's legal learnset
+			if (move.id === "terablast") return {type: "learnable"};
+		},
+}
