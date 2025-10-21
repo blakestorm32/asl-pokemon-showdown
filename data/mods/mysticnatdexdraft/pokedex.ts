@@ -10193,7 +10193,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evoLevel: 35,
 		eggGroups: ["Field"],
 		otherFormes: ["Darmanitan-Zen", "Darmanitan-Galar", "Darmanitan-Galar-Zen"],
-		formeOrder: ["Darmanitan", "Darmanitan-Zen", "Darmanitan-Galar", "Darmanitan-Galar-Zen"],
 	},
 	darmanitanzen: {
 		num: 555,
@@ -10207,8 +10206,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 92.9,
 		color: "Blue",
 		eggGroups: ["Field"],
-		requiredAbility: "Zen Mode",
-		battleOnly: "Darmanitan",
+
 	},
 	darmanitangalar: {
 		num: 555,
@@ -10238,8 +10236,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 120,
 		color: "White",
 		eggGroups: ["Field"],
-		requiredAbility: "Zen Mode",
-		battleOnly: "Darmanitan-Galar",
+
 	},
 	maractus: {
 		num: 556,
@@ -11716,7 +11713,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 		tags: ["Mythical"],
 		otherFormes: ["Meloetta-Pirouette"],
-		formeOrder: ["Meloetta", "Meloetta-Pirouette"],
 	},
 	meloettapirouette: {
 		num: 648,
@@ -11731,8 +11727,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 6.5,
 		color: "White",
 		eggGroups: ["Undiscovered"],
-		requiredMove: "Relic Song",
-		battleOnly: "Meloetta",
 	},
 	genesect: {
 		num: 649,
@@ -13932,13 +13926,12 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		baseForme: "Solo",
 		types: ["Water"],
 		baseStats: { hp: 45, atk: 20, def: 20, spa: 25, spd: 25, spe: 40 },
-		abilities: { 0: "Schooling" },
+		abilities: { 0: "Aura Break" },
 		heightm: 0.2,
 		weightkg: 0.3,
 		color: "Blue",
 		eggGroups: ["Water 2"],
 		otherFormes: ["Wishiwashi-School"],
-		formeOrder: ["Wishiwashi", "Wishiwashi-School"],
 	},
 	wishiwashischool: {
 		num: 746,
@@ -13952,8 +13945,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 78.6,
 		color: "Blue",
 		eggGroups: ["Water 2"],
-		requiredAbility: "Schooling",
-		battleOnly: "Wishiwashi",
 	},
 	mareanie: {
 		num: 747,
@@ -16658,7 +16649,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Yellow",
 		eggGroups: ["Field", "Fairy"],
 		otherFormes: ["Morpeko-Hangry"],
-		formeOrder: ["Morpeko", "Morpeko-Hangry"],
 	},
 	morpekohangry: {
 		num: 877,
@@ -16672,8 +16662,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 3,
 		color: "Purple",
 		eggGroups: ["Field", "Fairy"],
-		requiredAbility: "Hunger Switch",
-		battleOnly: "Morpeko",
 	},
 	cufant: {
 		num: 878,
