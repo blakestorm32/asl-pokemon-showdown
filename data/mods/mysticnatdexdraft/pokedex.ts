@@ -7716,7 +7716,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 9.3,
 		color: "Pink",
 		eggGroups: ["Fairy", "Grass"],
-		battleOnly: "Cherrim",
 	},
 	shellos: {
 		num: 422,
