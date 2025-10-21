@@ -7692,7 +7692,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	cherrim: {
 		num: 421,
 		name: "Cherrim",
-		baseForme: "Overcast",
 		types: ["Grass"],
 		baseStats: { hp: 70, atk: 60, def: 70, spa: 87, spd: 78, spe: 85 },
 		abilities: { 0: "Harvest", H: "Seed Sower" },
@@ -7702,14 +7701,10 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Cherubi",
 		evoLevel: 25,
 		eggGroups: ["Fairy", "Grass"],
-		otherFormes: ["Cherrim-Sunshine"],
-		formeOrder: ["Cherrim", "Cherrim-Sunshine"],
 	},
 	cherrimsunshine: {
 		num: 421,
 		name: "Cherrim-Sunshine",
-		baseSpecies: "Cherrim",
-		forme: "Sunshine",
 		types: ["Grass"],
 		baseStats: { hp: 70, atk: 60, def: 70, spa: 87, spd: 78, spe: 85 },
 		abilities: { 0: "Solar Power",  H: "Quick Feet" },
@@ -7717,8 +7712,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 9.3,
 		color: "Pink",
 		eggGroups: ["Fairy", "Grass"],
-		requiredAbility: "Flower Gift",
-		battleOnly: "Cherrim",
 	},
 	shellos: {
 		num: 422,
