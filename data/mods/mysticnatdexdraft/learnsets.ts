@@ -49502,6 +49502,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	cherrim: {
 		learnset: {
+			aromatherapy: ["8M", "7M", "6M", "5M", "4M"],
 			attract: ["8M", "7M", "6M", "5M", "4M"],
 			bulletseed: ["8M", "4M"],
 			captivate: ["4M"],
@@ -49562,6 +49563,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	},
 	cherrimsunshine: {
 		learnset: {
+			aromatherapy: ["8M", "7M", "6M", "5M", "4M"],
 			attract: ["8M", "7M", "6M", "5M", "4M"],
 			bulletseed: ["8M", "4M"],
 			captivate: ["4M"],
