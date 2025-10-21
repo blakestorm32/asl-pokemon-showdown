@@ -3228,6 +3228,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	darmanitanzen: {
 		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
 	},
 	darmanitangalar: {
 		isNonstandard: "Past",
@@ -3236,6 +3238,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	darmanitangalarzen: {
 		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "Uber",
 	},
 	maractus: {
 		isNonstandard: "Past",
@@ -3716,6 +3720,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	meloetta: {
 		tier: "NU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	meloettapirouette: {
+		tier: "Illegal",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
@@ -4303,6 +4312,8 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	wishiwashischool: {
 		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
 	},
 	mareanie: {
 		tier: "LC",
@@ -5069,6 +5080,11 @@ export const FormatsData: import('../sim/dex-species').SpeciesFormatsDataTable =
 	},
 	morpeko: {
 		tier: "ZU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
+	},
+	morpekohangry: {
+		tier: "Illegal",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",
 	},
