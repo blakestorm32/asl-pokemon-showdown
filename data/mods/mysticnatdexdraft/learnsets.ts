@@ -1,4 +1,4 @@
-export const Learnsets: import('../../../sim/dex-species').LearnsetDataTable = {
+export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 	missingno: {
 		learnset: {
 			blizzard: ["3L1"],
@@ -70092,6 +70092,7 @@ export const Learnsets: import('../../../sim/dex-species').LearnsetDataTable = {
 			swagger: ["6M"],
 			synthesis: ["7T"],
 			tackle: ["9L1", "6L1"],
+			terablast: ["9M"],
 			toxic: ["6M"],
 			vinewhip: ["9L1", "6L1"],
 			wish: ["9L20", "6L20"],
