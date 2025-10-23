@@ -6019,7 +6019,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		name: "Sharpedo",
 		types: ["Water", "Dark"],
 		baseStats: { hp: 70, atk: 120, def: 40, spa: 95, spd: 40, spe: 95 },
-		abilities: { 0: "Huge Power", H: "Wonder Guard" },
+		abilities: { 0: "Rough Skin", H: "Speed Boost" },
 		heightm: 1.8,
 		weightkg: 88.8,
 		color: "Blue",
