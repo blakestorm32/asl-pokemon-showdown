@@ -36,7 +36,6 @@
   "scripts": {
     "start:ps": "node pokemon-showdown start",
     "start:web": "node server.js", 
-    "start": "node pokemon-showdown start",
     "build": "node build",
     "build-npm": "node build && npx tsc sim/global-types.ts sim/index.ts --declaration --emitDeclarationOnly --declarationDir dist/ --target es2020 --strict --moduleResolution node --types node --lib es2020",
     "test-npm": "npx tsc sim/global-types.ts sim/index.ts --noEmit --target es2020 --strict --moduleResolution node --types node --lib es2020",
