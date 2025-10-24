@@ -284,39 +284,6 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		// It's optional if you don't need these features.
 
 		this.server = http.createServer();
-		this.server.on('request', async (req: http.IncomingMessage, res: http.ServerResponse) => {
-			if (!req.url || !req.url.startsWith('/login/')) return;
-
-			try {
-				// Map: /login/~~showdown/action.php -> https://play.pokemonshowdown.com/~~showdown/action.php
-				const target = 'https://play.pokemonshowdown.com' + req.url.replace(/^\/login\//, '/');
-
-				// collect body (for POSTs like act=login/upkeep)
-				let body = '';
-				req.setEncoding('utf8');
-				for await (const chunk of req) body += chunk;
-
-				const method = (req.method || 'GET').toUpperCase();
-				const headers: Record<string, string> = {};
-				const ct = req.headers['content-type'];
-				if (typeof ct === 'string') headers['content-type'] = ct;
-
-				const upstream = await fetch(target, {
-				method,
-				headers,
-				body: (method === 'GET' || method === 'HEAD') ? undefined : body,
-				});
-
-				res.statusCode = upstream.status;
-				upstream.headers.forEach((v, k) => {
-				if (k.toLowerCase() !== 'content-length') res.setHeader(k, v);
-				});
-				res.end(await upstream.text());
-			} catch (e: any) {
-				res.statusCode = 502;
-				res.end('Login proxy error: ' + (e?.message || String(e)));
-			}
-		});
 		this.serverSsl = null;
 		if (config.ssl) {
 			let key;
