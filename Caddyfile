@@ -1,0 +1,31 @@
+# Listen on the platform port (Railway sets $PORT)
+http://:{$PORT} {
+  # Preflight only for the PS API paths
+  @preflight {
+    method OPTIONS
+    path /~~*
+  }
+  header @preflight Access-Control-Allow-Origin "https://aslclientshowdown-production.up.railway.app"
+  header @preflight Access-Control-Allow-Methods "GET, POST, OPTIONS"
+  header @preflight Access-Control-Allow-Headers "*"
+  respond @preflight 204
+
+  # Proxy PS API calls to the psim.us endpoint, preserving /~~...
+  @ps path /~~*
+  reverse_proxy @ps https://aslpokemonbattling-up-railway-app.psim.us {
+    # preserve Host for the upstream
+    header_up Host aslpokemonbattling-up-railway-app.psim.us
+    # optional: pass client IP info
+    header_up X-Forwarded-Proto {scheme}
+    header_up X-Forwarded-Host {host}
+  }
+
+  # Add CORS headers on responses for those API calls
+  header @ps Access-Control-Allow-Origin "https://aslclientshowdown-production.up.railway.app"
+  header @ps Access-Control-Allow-Credentials "true"
+
+  # Serve your built client
+  encode zstd gzip
+  root * /srv/site
+  file_server
+}
