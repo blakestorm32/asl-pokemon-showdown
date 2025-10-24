@@ -475,6 +475,7 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		socket.on('data', message => {
 			// drop empty messages (DDoS?)
 			if (!message) return;
+			console.log("Recieved dara from client", message)
 			// drop messages over 100KB
 			if (message.length > (100 * 1024)) {
 				socket.write(`|popup|Your message must be below 100KB`);
