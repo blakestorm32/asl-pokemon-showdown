@@ -475,7 +475,7 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 		socket.on('data', message => {
 			// drop empty messages (DDoS?)
 			if (!message) return;
-			console.log("Recieved data from client", message)
+
 			// drop messages over 100KB
 			if (message.length > (100 * 1024)) {
 				socket.write(`|popup|Your message must be below 100KB`);
@@ -483,6 +483,19 @@ export class ServerStream extends Streams.ObjectReadWriteStream<string> {
 				console.log(message.slice(0, 160));
 				return;
 			}
+
+			//encoded logs
+			const i = message.indexOf(' ');
+			if (i === -1){ 
+				console.log("Recieved data from client", message);
+			}
+			else{   
+				const head = message.slice(0, i); 
+				const tail = message.slice(i + 1); 
+				const tailB64 = Buffer.from(tail, 'utf8').toString('base64');
+				console.log("Recieved data from client",`${head} ${tailB64}`);
+			}
+
 			// drop legacy JSON messages
 			if (typeof message !== 'string' || message.startsWith('{')) return;
 			// drop blank messages (DDoS?)
