@@ -10,7 +10,9 @@
     "preact": "^10.5.15",
     "preact-render-to-string": "^6.5.13",
     "sockjs": "^0.3.21",
-    "ts-chacha20": "^1.2.0"
+    "ts-chacha20": "^1.2.0",
+    "express": "^4.19.2",
+    "http-proxy-middleware": "^3.0.0"
   },
   "optionalDependencies": {
     "better-sqlite3": "^11.10.0",
@@ -32,6 +34,8 @@
     "node": ">=22.0.0"
   },
   "scripts": {
+    "start:ps": "node pokemon-showdown start",
+    "start:web": "node server.js", 
     "start": "node pokemon-showdown start",
     "build": "node build",
     "build-npm": "node build && npx tsc sim/global-types.ts sim/index.ts --declaration --emitDeclarationOnly --declarationDir dist/ --target es2020 --strict --moduleResolution node --types node --lib es2020",
