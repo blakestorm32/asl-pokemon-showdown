@@ -11691,7 +11691,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		types: ["Water", "Fighting"],
 		gender: "N",
 		baseStats: { hp: 91, atk: 72, def: 90, spa: 129, spd: 90, spe: 108 },
-		abilities: { 0: "Justified" },
+		abilities: { 0: "Justified", H: "Torrent" },
 		heightm: 1.4,
 		weightkg: 48.5,
 		color: "Yellow",
