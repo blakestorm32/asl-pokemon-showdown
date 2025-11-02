@@ -18393,7 +18393,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		forme: "Three-Segment",
 		types: ["Normal"],
 		baseStats: { hp: 125, atk: 100, def: 80, spa: 85, spd: 75, spe: 55 },
-		abilities: { 0: "Serene Grace", 1: "Run Away", H: "Rattled" },
+		abilities: { 0: "Serene Grace", 1: "Anticipation", H: "Rattled" },
 		heightm: 4.5,
 		weightkg: 47.4,
 		color: "Yellow",
