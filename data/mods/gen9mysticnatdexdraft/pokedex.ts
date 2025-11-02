@@ -5890,7 +5890,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		name: "Manectric",
 		types: ["Electric"],
 		baseStats: { hp: 70, atk: 75, def: 60, spa: 105, spd: 60, spe: 105 },
-		abilities: { 0: "Surge Surfer", 1: "Lightning Rod", H: "Minus" },
+		abilities: { 0: "Surge Surfer", 1: "Lightning Rod", H: "Stakeout" },
 		heightm: 1.5,
 		weightkg: 40.2,
 		color: "Yellow",
