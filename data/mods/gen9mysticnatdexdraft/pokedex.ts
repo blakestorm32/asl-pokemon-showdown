@@ -5580,7 +5580,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		name: "Ninjask",
 		types: ["Bug", "Flying"],
 		baseStats: { hp: 61, atk: 90, def: 45, spa: 50, spd: 50, spe: 160 },
-		abilities: { 0: "Speed Boost", H: "Infiltrator" },
+		abilities: { 0: "Speed Boost", 1: "Unburden", H: "Infiltrator" },
 		heightm: 0.8,
 		weightkg: 12,
 		color: "Yellow",
