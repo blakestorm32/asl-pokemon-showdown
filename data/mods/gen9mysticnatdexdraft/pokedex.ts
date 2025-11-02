@@ -2798,7 +2798,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		types: ["Fire"],
 		genderRatio: { M: 0.75, F: 0.25 },
 		baseStats: { hp: 65, atk: 95, def: 57, spa: 100, spd: 85, spe: 93 },
-		abilities: { 0: "Flame Body", H: "Vital Spirit" },
+		abilities: { 0: "Flame Body", 1: "Flash Fire", H: "Vital Spirit" },
 		heightm: 1.3,
 		weightkg: 44.5,
 		color: "Red",
