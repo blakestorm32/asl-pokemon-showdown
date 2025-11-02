@@ -15073,7 +15073,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		types: ["Steel", "Flying"],
 		gender: "N",
 		baseStats: { hp: 97, atk: 101, def: 103, spa: 107, spd: 101, spe: 61 },
-		abilities: { 0: "Beast Boost", 1: "Sap Sipper" },
+		abilities: { 0: "Beast Boost", H: "Sap Sipper" },
 		heightm: 9.2,
 		weightkg: 999.9,
 		color: "Green",
