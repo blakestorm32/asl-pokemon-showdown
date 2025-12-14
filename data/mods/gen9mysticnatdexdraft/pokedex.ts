@@ -6505,7 +6505,6 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		color: "Gray",
 		eggGroups: ["Fairy", "Amorphous"],
 		otherFormes: ["Castform-Sunny", "Castform-Rainy", "Castform-Snowy"],
-		formeOrder: ["Castform", "Castform-Sunny", "Castform-Rainy", "Castform-Snowy"],
 	},
 	castformsunny: {
 		num: 351,
@@ -6519,7 +6518,6 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		weightkg: 0.8,
 		color: "Red",
 		eggGroups: ["Fairy", "Amorphous"],
-		battleOnly: "Castform",
 	},
 	castformrainy: {
 		num: 351,
@@ -6533,7 +6531,6 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		weightkg: 0.8,
 		color: "Blue",
 		eggGroups: ["Fairy", "Amorphous"],
-		battleOnly: "Castform",
 	},
 	castformsnowy: {
 		num: 351,
@@ -6547,7 +6544,6 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		weightkg: 0.8,
 		color: "White",
 		eggGroups: ["Fairy", "Amorphous"],
-		battleOnly: "Castform",
 	},
 	kecleon: {
 		num: 352,
