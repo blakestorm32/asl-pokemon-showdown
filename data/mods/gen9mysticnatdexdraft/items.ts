@@ -1366,7 +1366,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2593,
 		gen: 9,
-		isNonstandard: "Past",
 	},
 	dawnstone: {
 		name: "Dawn Stone",
@@ -1434,7 +1433,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2576,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	destinyknot: {
 		name: "Destiny Knot",
