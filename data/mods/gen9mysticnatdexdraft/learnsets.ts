@@ -91059,6 +91059,17 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			{generation: 9, level: 57, gender: "M", nature: "Quiet", ivs: {hp: 30, atk: 30, def: 30, spa: 30, spd: 30, spe: 30}, moves: ["muddywater", "icywind", "taunt", "dragonpulse"]},
 		],
 	},
+	tatsugiridroopy: {
+		learnset: {
+			celebrate: ["9S0"],
+			dracometeor: ["9S0"],
+			helpinghand: ["9S0"],
+			muddywater: ["9S0"],
+		},
+		eventData: [
+			{generation: 9, level: 50, moves: ["dracometeor", "muddywater", "helpinghand", "celebrate"], pokeball: "cherishball"},
+		],
+	},
 	tatsugiristretchy: {
 		learnset: {
 			celebrate: ["9S0"],
