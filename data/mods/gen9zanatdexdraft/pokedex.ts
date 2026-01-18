@@ -804,7 +804,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		evoItem: "Thunder Stone",
 		eggGroups: ["Field", "Fairy"],
 		otherFormes: ["Raichu-Alola"],
-		formeOrder: ["Raichu", "Raichu-Alola"],
+		formeOrder: ["Raichu", "Raichu-Alola", "Raichu-Mega-X", "Raichu-Mega-Y"],
 	},
 	raichualola: {
 		num: 26,
@@ -6655,6 +6655,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		evoCondition: "at night",
 		eggGroups: ["Amorphous"],
 		canHatch: true,
+		formeOrder: ["Chimecho", "Chimecho-Mega"],
 	},
 	chimechomega: {
 		num: 358,
@@ -6682,7 +6683,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		color: "White",
 		eggGroups: ["Field"],
 		otherFormes: ["Absol-Mega"],
-		formeOrder: ["Absol", "Absol-Mega"],
+		formeOrder: ["Absol", "Absol-Mega", "Absol-Mega-Z"],
 	},
 	absolmega: {
 		num: 359,
@@ -7411,6 +7412,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		prevo: "Staravia",
 		evoLevel: 34,
 		eggGroups: ["Flying"],
+		formeOrder: ["Staraptor", "Staraptor-Mega"],
 	},
 	staraptormega: {
 		num: 398,
@@ -8141,7 +8143,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		evoLevel: 48,
 		eggGroups: ["Monster", "Dragon"],
 		otherFormes: ["Garchomp-Mega"],
-		formeOrder: ["Garchomp", "Garchomp-Mega"],
+		formeOrder: ["Garchomp", "Garchomp-Mega", "Garchomp-Mega-Z"],
 	},
 	garchompmega: {
 		num: 445,
@@ -8215,7 +8217,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		evoCondition: "during the day",
 		eggGroups: ["Field", "Human-Like"],
 		otherFormes: ["Lucario-Mega"],
-		formeOrder: ["Lucario", "Lucario-Mega"],
+		formeOrder: ["Lucario", "Lucario-Mega", "Lucario-Mega-Z"],
 	},
 	lucariomega: {
 		num: 448,
@@ -8914,6 +8916,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		color: "Brown",
 		tags: ["Sub-Legendary"],
 		eggGroups: ["Undiscovered"],
+		formeOrder: ["Heatran", "Heatran-Mega"],
 	},
 	heatranmega: {
 		num: 485,
@@ -9027,6 +9030,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		color: "Black",
 		tags: ["Mythical"],
 		eggGroups: ["Undiscovered"],
+		formeOrder: ["Darkrai", "Darkrai-Mega"],
 	},
 	darkraimega: {
 		num: 491,
@@ -11413,6 +11417,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		prevo: "Golett",
 		evoLevel: 43,
 		eggGroups: ["Mineral"],
+		formeOrder: ["Golurk", "Golurk-Mega"],
 	},
 	golurkmega: {
 		num: 623,
@@ -12692,7 +12697,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		evoLevel: 25,
 		eggGroups: ["Field"],
 		otherFormes: ["Meowstic-F"],
-		formeOrder: ["Meowstic", "Meowstic-F"],
+		formeOrder: ["Meowstic", "Meowstic-F", "Meowstic-M-Mega", "Meowstic-F-Mega"],
 	},
 	meowsticf: {
 		num: 678,
@@ -12714,7 +12719,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		num: 678,
 		name: "Meowstic-M-Mega",
 		baseSpecies: "Meowstic",
-		forme: "Mega",
+		forme: "M-Mega",
 		types: ["Psychic"],
 		gender: "M",
 		baseStats: { hp: 74, atk: 48, def: 76, spa: 143, spd: 101, spe: 124 },
@@ -12729,7 +12734,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 	meowsticfmega: {
 		num: 678,
 		name: "Meowstic-F-Mega",
-		baseSpecies: "Meowstic",
+		baseSpecies: "Meowstic-F",
 		forme: "F-Mega",
 		types: ["Psychic"],
 		gender: "F",
@@ -12740,7 +12745,6 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		color: "White",
 		eggGroups: ["Field"],
 		requiredItem: "Meowsticite",
-		battleOnly: "Meowstic-F",
 		gen: 9,
 	},
 	honedge: {
@@ -13938,6 +13942,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		evoType: "useItem",
 		evoItem: "Ice Stone",
 		eggGroups: ["Water 3"],
+		formeOrder: ["Crabominable", "Crabominable-Mega"],
 	},
 	crabominablemega: {
 		num: 740,
@@ -14486,6 +14491,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		prevo: "Wimpod",
 		evoLevel: 30,
 		eggGroups: ["Bug", "Water 3"],
+		formeOrder: ["Golisopod", "Golisopod-Mega"],
 	},
 	golisopodmega: {
 		num: 768,
@@ -15410,7 +15416,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		eggGroups: ["Undiscovered"],
 		tags: ["Mythical"],
 		otherFormes: ["Magearna-Original"],
-		formeOrder: ["Magearna", "Magearna-Original"],
+		formeOrder: ["Magearna", "Magearna-Original", "Magearna-Mega", "Magearna-Original-Mega"],
 	},
 	magearnaoriginal: {
 		num: 801,
@@ -15540,6 +15546,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		color: "Yellow",
 		tags: ["Mythical"],
 		eggGroups: ["Undiscovered"],
+		formeOrder: ["Zeraora", "Zeraora-Mega"],
 	},
 	zeraoramega: {
 		num: 807,
@@ -18253,6 +18260,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		evoType: "useItem",
 		evoItem: "Fire Stone",
 		eggGroups: ["Grass"],
+		formeOrder: ["Scovillain", "Scovillain-Mega"],
 	},
 	scovillainmega: {
 		num: 952,
@@ -18511,6 +18519,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		prevo: "Glimmet",
 		evoLevel: 35,
 		eggGroups: ["Mineral"],
+		formeOrder: ["Glimmora", "Glimmora-Mega"],
 	},
 	glimmoramega: {
 		num: 970,
@@ -18622,7 +18631,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		weightkg: 8,
 		color: "Red",
 		cosmeticFormes: ["Tatsugiri-Droopy", "Tatsugiri-Stretchy"],
-		formeOrder: ["Tatsugiri", "Tatsugiri-Droopy", "Tatsugiri-Stretchy"],
+		formeOrder: ["Tatsugiri", "Tatsugiri-Droopy", "Tatsugiri-Stretchy", "Tatsugiri-Curly-Mega", "Tatsugiri-Droopy-Mega", "Tatsugiri-Stretchy-Mega"],
 		eggGroups: ["Water 2"],
 	},
 	tatsugiridroopy: {
@@ -18966,6 +18975,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		prevo: "Arctibax",
 		evoLevel: 54,
 		eggGroups: ["Dragon", "Mineral"],
+		formeOrder: ["Baxcalibur", "Baxcalibur-Mega"],
 	},
 	baxcaliburmega: {
 		num: 998,
