@@ -4342,14 +4342,14 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	mysticite: {
 		name: "Mysticite",
 		spritenum: 0,
-		megaStone: ["Dudunsparce-Mega"],
-		megaEvolves: ["Dudunsparce"],
-		itemUser: ["Dudunsparce"],
+		megaStone: ["Dudunsparce-Mega", "Dudunsparce-Three-Segment-Mega"],
+		megaEvolves: ["Dudunsparce", "Dudunsparce-Three-Segment"],
+		itemUser: ["Dudunsparce", "Dudunsparce-Three-Segment"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves!.includes(source.baseSpecies.baseSpecies)) return false;
 			return true;
 		},
-		num: 2594,
+		num: 2602,
 		gen: 9,
 	},
 	mysticwater: {

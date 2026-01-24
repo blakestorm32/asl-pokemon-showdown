@@ -1483,9 +1483,14 @@ export const FormatsData: import('../../../sim/dex-species').SpeciesFormatsDataT
 		natDexTier: "RU",
 	},
 	dudunsparcemega: {
-		tier: "OU",
+		tier: "PU",
 		doublesTier: "(DUU)",
-		natDexTier: "OU",
+		natDexTier: "RU",
+	},
+	dudunsparcethreesegmentmega: {
+		tier: "PU",
+		doublesTier: "(DUU)",
+		natDexTier: "RU",
 	},
 	gligar: {
 		tier: "NU",
