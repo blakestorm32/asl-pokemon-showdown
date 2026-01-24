@@ -18793,8 +18793,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	dudunsparcemega: {
 		num: 982,
-		name: "Dunsparce-Mega",
-		baseSpecies: "Dunsparce",
+		name: "Dudunsparce-Mega",
+		baseSpecies: "Dudunsparce",
 		forme: "Mega",
 		types: ["Normal", "Ground"],
 		baseStats: { hp: 100, atk: 125, def: 115, spa: 95, spd: 95, spe: 65 },
@@ -18808,8 +18808,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	},
 	dudunsparcethreesegmentmega: {
 		num: 982,
-		name: "Dunsparce-Three-Segment-Mega",
-		baseSpecies: "Dunsparce",
+		name: "Dudunsparce-Three-Segment-Mega",
+		baseSpecies: "Dudunsparce",
 		forme: "Three-Segment-Mega",
 		types: ["Normal", "Ground"],
 		baseStats: { hp: 100, atk: 125, def: 115, spa: 95, spd: 95, spe: 65 },

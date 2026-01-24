@@ -1290,6 +1290,10 @@ export const ItemsText: { [id: IDEntry]: ItemText } = {
 			shortDesc: "Holder's Water-type attacks have 1.1x power.",
 		},
 	},
+	mysticite: {
+		name: "Mysticite",
+		shortDesc: "If held by a Mystic Mega, this item allows it to Mega Evolve in battle.",
+	},
 	nanabberry: {
 		name: "Nanab Berry",
 		shortDesc: "Cannot be eaten by the holder. No effect when eaten with Bug Bite or Pluck.",
