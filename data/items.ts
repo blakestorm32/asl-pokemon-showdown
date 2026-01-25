@@ -31,7 +31,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 674,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	absolite: {
 		name: "Absolite",
@@ -45,7 +44,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 677,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	absolitez: {
 		name: "Absolite Z",
@@ -59,7 +57,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2588,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	absorbbulb: {
 		name: "Absorb Bulb",
@@ -150,7 +147,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 672,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	aggronite: {
 		name: "Aggronite",
@@ -164,7 +160,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 667,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	aguavberry: {
 		name: "Aguav Berry",
@@ -234,7 +229,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 679,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	aloraichiumz: {
 		name: "Aloraichium Z",
@@ -259,7 +253,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 755,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	ampharosite: {
 		name: "Ampharosite",
@@ -273,7 +266,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 658,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	apicotberry: {
 		name: "Apicot Berry",
@@ -359,7 +351,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 757,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	auspiciousarmor: {
 		name: "Auspicious Armor",
@@ -406,7 +397,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 668,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	barbaracite: {
 		name: "Barbaracite",
@@ -420,7 +410,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2581,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	baxcalibrite: {
 		name: "Baxcalibrite",
@@ -434,7 +423,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2601,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	beastball: {
 		name: "Beast Ball",
@@ -455,7 +443,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 770,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	belueberry: {
 		name: "Belue Berry",
@@ -485,7 +472,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 43,
 		gen: 2,
-		isNonstandard: "Past",
 	},
 	berrysweet: {
 		name: "Berry Sweet",
@@ -591,7 +577,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 661,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	blazikenite: {
 		name: "Blazikenite",
@@ -605,7 +590,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 664,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	blueorb: {
 		name: "Blue Orb",
@@ -624,7 +608,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		isPrimalOrb: true,
 		num: 535,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	blukberry: {
 		name: "Bluk Berry",
@@ -741,7 +724,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Bug"],
 		num: 909,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	burndrive: {
 		name: "Burn Drive",
@@ -757,7 +739,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Genesect-Burn"],
 		num: 118,
 		gen: 5,
-		isNonstandard: "Past",
 	},
 	cameruptite: {
 		name: "Cameruptite",
@@ -771,7 +752,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 767,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	cellbattery: {
 		name: "Cell Battery",
@@ -802,7 +782,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2574,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	charcoal: {
 		name: "Charcoal",
@@ -831,7 +810,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 660,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	charizarditey: {
 		name: "Charizardite Y",
@@ -845,7 +823,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 678,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	chartiberry: {
 		name: "Charti Berry",
@@ -912,7 +889,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2575,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	chestoberry: {
 		name: "Chesto Berry",
@@ -973,7 +949,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Genesect-Chill"],
 		num: 119,
 		gen: 5,
-		isNonstandard: "Past",
 	},
 	chimechite: {
 		name: "Chimechite",
@@ -987,7 +962,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2587,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	chippedpot: {
 		name: "Chipped Pot",
@@ -1139,7 +1113,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2559,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	cloversweet: {
 		name: "Clover Sweet",
@@ -1267,7 +1240,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2595,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	crackedpot: {
 		name: "Cracked Pot",
@@ -1352,7 +1324,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Dark"],
 		num: 919,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	darkranite: {
 		name: "Darkranite",
@@ -1366,7 +1337,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2593,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	dawnstone: {
 		name: "Dawn Stone",
@@ -1403,7 +1373,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Clamperl"],
 		num: 227,
 		gen: 3,
-		isNonstandard: "Past",
 	},
 	deepseatooth: {
 		name: "Deep Sea Tooth",
@@ -1420,7 +1389,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Clamperl"],
 		num: 226,
 		gen: 3,
-		isNonstandard: "Past",
 	},
 	delphoxite: {
 		name: "Delphoxite",
@@ -1434,7 +1402,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2576,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	destinyknot: {
 		name: "Destiny Knot",
@@ -1463,7 +1430,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 764,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	diveball: {
 		name: "Dive Ball",
@@ -1496,7 +1462,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Genesect-Douse"],
 		num: 116,
 		gen: 5,
-		isNonstandard: "Past",
 	},
 	dracoplate: {
 		name: "Draco Plate",
@@ -1530,7 +1495,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2582,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	dragonfang: {
 		name: "Dragon Fang",
@@ -1573,7 +1537,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2562,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	dragoniumz: {
 		name: "Dragonium Z",
@@ -1601,7 +1564,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Dragon"],
 		num: 918,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	dragonscale: {
 		name: "Dragon Scale",
@@ -1624,7 +1586,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2585,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	dreadplate: {
 		name: "Dread Plate",
@@ -1723,7 +1684,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2573,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	eeviumz: {
 		name: "Eevium Z",
@@ -1849,7 +1809,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Electric"],
 		num: 915,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	electricseed: {
 		name: "Electric Seed",
@@ -1898,7 +1857,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2569,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	enigmaberry: {
 		name: "Enigma Berry",
@@ -1955,7 +1913,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2570,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	expertbelt: {
 		name: "Expert Belt",
@@ -2026,7 +1983,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Fairy"],
 		num: 920,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	falinksite: {
 		name: "Falinksite",
@@ -2040,7 +1996,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2586,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	fastball: {
 		name: "Fast Ball",
@@ -2061,7 +2016,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2564,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	fightinggem: {
 		name: "Fighting Gem",
@@ -2091,7 +2045,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Fighting"],
 		num: 904,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	fightiniumz: {
 		name: "Fightinium Z",
@@ -2159,7 +2112,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Fire"],
 		num: 912,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	firestone: {
 		name: "Fire Stone",
@@ -2261,7 +2213,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2579,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	flowersweet: {
 		name: "Flower Sweet",
@@ -2300,7 +2251,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Flying"],
 		num: 905,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	flyiniumz: {
 		name: "Flyinium Z",
@@ -2406,7 +2356,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2566,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	fullincense: {
 		name: "Full Incense",
@@ -2417,7 +2366,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		onFractionalPriority: -0.1,
 		num: 316,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	galaricacuff: {
 		name: "Galarica Cuff",
@@ -2449,7 +2397,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 756,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	ganlonberry: {
 		name: "Ganlon Berry",
@@ -2483,7 +2430,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 683,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	garchompitez: {
 		name: "Garchompite Z",
@@ -2497,7 +2443,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2590,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	gardevoirite: {
 		name: "Gardevoirite",
@@ -2511,7 +2456,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 657,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	gengarite: {
 		name: "Gengarite",
@@ -2525,7 +2469,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 656,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	ghostgem: {
 		name: "Ghost Gem",
@@ -2567,7 +2510,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Ghost"],
 		num: 910,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	glalitite: {
 		name: "Glalitite",
@@ -2581,7 +2523,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 763,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	glimmoranite: {
 		name: "Glimmoranite",
@@ -2595,7 +2536,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2600,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	goldbottlecap: {
 		name: "Gold Bottle Cap",
@@ -2618,7 +2558,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2596,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	golurkite: {
 		name: "Golurkite",
@@ -2632,7 +2571,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2594,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	grassgem: {
 		name: "Grass Gem",
@@ -2674,7 +2612,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Grass"],
 		num: 914,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	grassyseed: {
 		name: "Grassy Seed",
@@ -2719,7 +2656,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2577,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	grepaberry: {
 		name: "Grepa Berry",
@@ -2819,7 +2755,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Ground"],
 		num: 907,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	gyaradosite: {
 		name: "Gyaradosite",
@@ -2833,7 +2768,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 676,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	habanberry: {
 		name: "Haban Berry",
@@ -2886,7 +2820,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2583,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	healball: {
 		name: "Heal Ball",
@@ -2928,7 +2861,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2592,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	heatrock: {
 		name: "Heat Rock",
@@ -2978,7 +2910,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 680,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	hondewberry: {
 		name: "Hondew Berry",
@@ -3004,7 +2935,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 666,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	iapapaberry: {
 		name: "Iapapa Berry",
@@ -3060,7 +2990,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Ice"],
 		num: 917,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	icestone: {
 		name: "Ice Stone",
@@ -3222,7 +3151,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 675,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	kasibberry: {
 		name: "Kasib Berry",
@@ -3380,7 +3308,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 684,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	latiosite: {
 		name: "Latiosite",
@@ -3394,7 +3321,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 685,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	laxincense: {
 		name: "Lax Incense",
@@ -3410,7 +3336,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 255,
 		gen: 3,
-		isNonstandard: "Past",
 	},
 	leafstone: {
 		name: "Leaf Stone",
@@ -3435,7 +3360,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Farfetch\u2019d", "Farfetch\u2019d-Galar", "Sirfetch\u2019d"],
 		num: 259,
 		gen: 8,
-		isNonstandard: "Past",
 	},
 	leftovers: {
 		name: "Leftovers",
@@ -3580,7 +3504,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 768,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	loveball: {
 		name: "Love Ball",
@@ -3610,7 +3533,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 673,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	lucarionitez: {
 		name: "Lucarionite Z",
@@ -3624,7 +3546,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2591,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	luckypunch: {
 		name: "Lucky Punch",
@@ -3640,7 +3561,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Chansey"],
 		num: 256,
 		gen: 2,
-		isNonstandard: "Past",
 	},
 	lumberry: {
 		name: "Lum Berry",
@@ -3767,7 +3687,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 215,
 		gen: 3,
-		isNonstandard: "Past",
 	},
 	magearnite: {
 		name: "Magearnite",
@@ -3781,7 +3700,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2597,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	magmarizer: {
 		name: "Magmarizer",
@@ -3869,7 +3787,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2580,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	maliciousarmor: {
 		name: "Malicious Armor",
@@ -3892,7 +3809,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 682,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	marangaberry: {
 		name: "Maranga Berry",
@@ -3952,7 +3868,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 681,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	meadowplate: {
 		name: "Meadow Plate",
@@ -3986,7 +3901,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 665,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	meganiumite: {
 		name: "Meganiumite",
@@ -4000,7 +3914,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2563,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	mentalherb: {
 		name: "Mental Herb",
@@ -4052,7 +3965,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2594,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	metagrossite: {
 		name: "Metagrossite",
@@ -4066,7 +3978,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 758,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	metalalloy: {
 		name: "Metal Alloy",
@@ -4104,7 +4015,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Ditto"],
 		num: 257,
 		gen: 2,
-		isNonstandard: "Past",
 	},
 	metronome: {
 		name: "Metronome",
@@ -4173,7 +4083,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 662,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	mewtwonitey: {
 		name: "Mewtwonite Y",
@@ -4187,7 +4096,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 663,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	micleberry: {
 		name: "Micle Berry",
@@ -4515,7 +4423,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 314,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	oldamber: {
 		name: "Old Amber",
@@ -4699,7 +4606,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 762,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	pikaniumz: {
 		name: "Pikanium Z",
@@ -4748,7 +4654,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 671,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	pixieplate: {
 		name: "Pixie Plate",
@@ -4836,7 +4741,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Poison"],
 		num: 906,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	pokeball: {
 		name: "Poke Ball",
@@ -5035,7 +4939,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Psychic"],
 		num: 916,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	psychicseed: {
 		name: "Psychic Seed",
@@ -5104,7 +5007,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2578,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	qualotberry: {
 		name: "Qualot Berry",
@@ -5156,7 +5058,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Ditto"],
 		num: 274,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	rabutaberry: {
 		name: "Rabuta Berry",
@@ -5184,7 +5085,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2585,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	raichunitey: {
 		name: "Raichunite Y",
@@ -5199,7 +5099,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2586,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	rarebone: {
 		name: "Rare Bone",
@@ -5327,7 +5226,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		isPrimalOrb: true,
 		num: 534,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	repeatball: {
 		name: "Repeat Ball",
@@ -5407,7 +5305,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 315,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	rockiumz: {
 		name: "Rockium Z",
@@ -5435,7 +5332,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Rock"],
 		num: 908,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	rockyhelmet: {
 		name: "Rocky Helmet",
@@ -5500,7 +5396,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 318,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	roseliberry: {
 		name: "Roseli Berry",
@@ -5583,7 +5478,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 754,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	sachet: {
 		name: "Sachet",
@@ -5662,7 +5556,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 769,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	sceptilite: {
 		name: "Sceptilite",
@@ -5676,7 +5569,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 753,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	scizorite: {
 		name: "Scizorite",
@@ -5690,7 +5582,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 670,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	scolipite: {
 		name: "Scolipite",
@@ -5704,7 +5595,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2571,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	scopelens: {
 		name: "Scope Lens",
@@ -5730,7 +5620,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2599,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	scraftinite: {
 		name: "Scraftinite",
@@ -5744,7 +5633,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2572,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	seaincense: {
 		name: "Sea Incense",
@@ -5760,7 +5648,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 254,
 		gen: 3,
-		isNonstandard: "Past",
 	},
 	sharpbeak: {
 		name: "Sharp Beak",
@@ -5789,7 +5676,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 759,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	shedshell: {
 		name: "Shed Shell",
@@ -5846,7 +5732,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Genesect-Shock"],
 		num: 117,
 		gen: 5,
-		isNonstandard: "Past",
 	},
 	shucaberry: {
 		name: "Shuca Berry",
@@ -5936,7 +5821,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2565,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	skullfossil: {
 		name: "Skull Fossil",
@@ -5980,7 +5864,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 760,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	smoothrock: {
 		name: "Smooth Rock",
@@ -6151,7 +6034,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2589,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	starfberry: {
 		name: "Starf Berry",
@@ -6197,7 +6079,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2561,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	starsweet: {
 		name: "Star Sweet",
@@ -6246,7 +6127,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 761,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	steelmemory: {
 		name: "Steel Memory",
@@ -6262,7 +6142,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Steel"],
 		num: 911,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	stick: {
 		name: "Stick",
@@ -6360,7 +6239,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 752,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	sweetapple: {
 		name: "Sweet Apple",
@@ -6448,7 +6326,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2601,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	terrainextender: {
 		name: "Terrain Extender",
@@ -6474,7 +6351,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Marowak", "Marowak-Alola", "Marowak-Alola-Totem", "Cubone"],
 		num: 258,
 		gen: 2,
-		isNonstandard: "Past",
 	},
 	throatspray: {
 		name: "Throat Spray",
@@ -7571,7 +7447,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 669,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	ultraball: {
 		name: "Ultra Ball",
@@ -7650,7 +7525,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 659,
 		gen: 6,
-		isNonstandard: "Past",
 	},
 	victreebelite: {
 		name: "Victreebelite",
@@ -7664,7 +7538,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2560,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	wacanberry: {
 		name: "Wacan Berry",
@@ -7729,7 +7602,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		itemUser: ["Silvally-Water"],
 		num: 913,
 		gen: 7,
-		isNonstandard: "Past",
 	},
 	waterstone: {
 		name: "Water Stone",
@@ -7767,7 +7639,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 317,
 		gen: 4,
-		isNonstandard: "Past",
 	},
 	weaknesspolicy: {
 		name: "Weakness Policy",
@@ -7998,7 +7869,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2598,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	zoomlens: {
 		name: "Zoom Lens",
@@ -8028,7 +7898,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		},
 		num: 2584,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 
 	// Gen 2 items
