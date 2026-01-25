@@ -1655,6 +1655,21 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		rating: 4,
 		num: 229,
 	},
+	greatsword: {
+		onModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).typeMod < 0) {
+				this.debug('Greatsword boost');
+				return this.chainModify(2);
+			}
+		},
+		onModifyMove(move) {
+			delete move.flags['contact'];
+		},
+		flags: {},
+		name: "Greatsword",
+		rating: 4,
+		num: 311,
+	},
 	grimneigh: {
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
@@ -1771,6 +1786,19 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Healer",
 		rating: 0,
 		num: 131,
+	},
+	heatedcharge: {
+		onChargeMove(pokemon, target, move) {{
+			this.debug('heated charge - remove charge turn for ' + move.id);
+			this.attrLastMove('[still]');
+			this.addMove('-anim', pokemon, move.name, target);
+			return false; // skip charge turn
+			}
+		},
+		flags: {},
+		name: "Heated Charge",
+		rating: 4,
+		num: 312,
 	},
 	heatproof: {
 		onSourceModifyAtkPriority: 6,

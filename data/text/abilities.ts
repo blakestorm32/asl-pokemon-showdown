@@ -604,6 +604,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Grassy Surge",
 		shortDesc: "On switch-in, this Pokemon summons Grassy Terrain.",
 	},
+	greatsword: {
+		name: "Great Sword",
+		shortDesc: "This Pokemon's attacks do not make contact and deal double damage if not very effective on the target.",
+	},
 	grimneigh: {
 		name: "Grim Neigh",
 		desc: "This Pokemon's Special Attack is raised by 1 stage if it attacks and knocks out another Pokemon.",
@@ -642,10 +646,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Healer",
 		desc: "30% chance this Pokemon's ally has its non-volatile status condition cured at the end of each turn.",
 		shortDesc: "30% chance this Pokemon's ally has its status cured at the end of each turn.",
-		gen6: {
-			desc: "30% chance each of this Pokemon's adjacent allies has its non-volatile status condition cured at the end of each turn.",
-			shortDesc: "30% chance each adjacent ally has its status cured at the end of each turn.",
-		},
+	},
+	heatedcharge: {
+		name: "Heated Charge",
+		shortDesc: "This Pokemon's two-turn moves complete in one turn.",
 	},
 	heatproof: {
 		name: "Heatproof",
