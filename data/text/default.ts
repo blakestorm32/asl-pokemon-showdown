@@ -21,7 +21,7 @@ export const DefaultText: { [id: IDEntry]: DefaultText } = {
 		swap: "[POKEMON] and [TARGET] switched places!",
 		swapCenter: "[POKEMON] moved to the center!",
 
-		// Multi Battles only
+		// Multi Battles onlyy
 		canDynamax: "  [TRAINER] can dynamax now!",
 		canDynamaxOwn: "  Dynamax Energy gathered around [TRAINER]!",
 
