@@ -58,6 +58,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.damage(target.baseMaxhp / 8, target, target);
 			}
 		},
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm') return false;
+		},
 		flags: {},
 		name: "Acclimated",
 		rating: 3,
@@ -2259,9 +2262,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				totalspd += target.getStat('spd', false, true);
 			}
 			if (totaldef && totaldef >= totalspd) {
-				this.boost({ spd: 1 });
-			} else if (totalspd) {
 				this.boost({ def: 1 });
+			} else if (totalspd) {
+				this.boost({ spd: 1 });
 			}
 
 			let totalatt = 0;
@@ -2271,9 +2274,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				totalspa += target.getStat('spa', false, true);
 			}
 			if (totalatt && totalatt >= totalspa) {
-				this.boost({ spa: 1 });
-			} else if (totalspa) {
 				this.boost({ atk: 1 });
+			} else if (totalspa) {
+				this.boost({ spa: 1 });
 			}
 		},
 		flags: {},
