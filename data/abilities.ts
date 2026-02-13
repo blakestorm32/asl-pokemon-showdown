@@ -41,25 +41,22 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 0,
 	},
 	acclimated: {
-		onModifySpa(spa, pokemon) {
-			if (this.field.isWeather('sandstorm')) {
-				return this.chainModify(1.5);
-			}
-			if (this.field.isWeather('sunnyday')) {
-				return this.chainModify(1.5);
-			}
-			if (this.field.isWeather('raindance')) {
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+			if (['sunnyday', 'desolateland', 'raindance', 'primordialsea', 'sandstorm'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(1.5);
 			}
 		},
 		onModifySpe(spe, pokemon) {
-			if (effect.id === 'snowscape') {
-				this.damage(target.baseMaxhp / 8, target, target);
+			if (['snowscape'].includes(pokemon.effectiveWeather())) {
 				return this.chainModify(0.67);
 			}
-		}
-		onImmunity(type, pokemon) {
-			if (type === 'sandstorm') return false;
+		},
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'snowscape') {
+				this.damage(target.baseMaxhp / 8, target, target);
+			}
 		},
 		flags: {},
 		name: "Acclimated",
@@ -2277,7 +2274,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({ spa: 1 });
 			} else if (totalspa) {
 				this.boost({ atk: 1 });
-			}
 			}
 		},
 		flags: {},
