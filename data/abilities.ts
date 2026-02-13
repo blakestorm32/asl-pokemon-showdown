@@ -56,7 +56,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (effect.id === 'snowscape') {
 				this.damage(target.baseMaxhp / 8, target, target);
 				return this.chainModify(0.67);
-		},
+			},
+		}
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm') return false;
 		},
@@ -1866,7 +1867,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 0,
 		num: 118,
 	},
-	bulletproof: {
+	honeytrap: {
 		onTryHit(pokemon, target, move) {
 			if (move.flags['pivot']) {
 				this.add('-immune', pokemon, '[from] ability: Honey Trap');
