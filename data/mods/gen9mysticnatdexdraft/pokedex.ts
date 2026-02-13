@@ -8322,7 +8322,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		name: "Carnivine",
 		types: ["Grass"],
 		baseStats: { hp: 74, atk: 100, def: 72, spa: 90, spd: 72, spe: 46 },
-		abilities: { 0: "Honey Trap, H: "Arena Trap" },
+		abilities: { 0: "Honey Trap", H: "Arena Trap" },
 		heightm: 1.4,
 		weightkg: 27,
 		color: "Green",

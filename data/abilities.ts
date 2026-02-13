@@ -56,7 +56,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (effect.id === 'snowscape') {
 				this.damage(target.baseMaxhp / 8, target, target);
 				return this.chainModify(0.67);
-			},
+			}
 		}
 		onImmunity(type, pokemon) {
 			if (type === 'sandstorm') return false;
