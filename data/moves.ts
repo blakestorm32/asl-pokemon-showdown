@@ -1137,7 +1137,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Baton Pass",
 		pp: 40,
 		priority: 0,
-		flags: { metronome: 1 },
+		flags: { metronome: 1, pivot: 1 },
 		onHit(target) {
 			if (!this.canSwitch(target.side) || target.volatiles['commanded']) {
 				this.attrLastMove('[still]');
@@ -2483,7 +2483,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Chilly Reception",
 		pp: 10,
 		priority: 0,
-		flags: {},
+		flags: { pivot: 1 },
 		priorityChargeCallback(source) {
 			source.addVolatile('chillyreception');
 		},
@@ -5997,7 +5997,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Flip Turn",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, pivot: 1 },
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
@@ -13651,7 +13651,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Parting Shot",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1 },
+		flags: { protect: 1, reflectable: 1, mirror: 1, sound: 1, bypasssub: 1, metronome: 1, pivot: 1 },
 		onHit(target, source, move) {
 			const success = this.boost({ atk: -1, spa: -1 }, target, source);
 			if (!success && !target.hasAbility('mirrorarmor')) {
@@ -16768,7 +16768,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Shed Tail",
 		pp: 10,
 		priority: 0,
-		flags: {},
+		flags: { pivot: 1 },
 		volatileStatus: 'substitute',
 		onTryHit(source) {
 			if (!this.canSwitch(source.side) || source.volatiles['commanded']) {
@@ -19916,7 +19916,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Teleport",
 		pp: 20,
 		priority: -6,
-		flags: { metronome: 1 },
+		flags: { metronome: 1, pivot: 1 },
 		onTry(source) {
 			return !!this.canSwitch(source.side);
 		},
@@ -21056,7 +21056,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "U-turn",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, pivot: 1 },
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",
@@ -21230,7 +21230,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		name: "Volt Switch",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, pivot: 1 },
 		selfSwitch: true,
 		secondary: null,
 		target: "normal",

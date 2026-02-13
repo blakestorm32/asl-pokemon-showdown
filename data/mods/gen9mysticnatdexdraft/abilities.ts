@@ -32,13 +32,38 @@ Ratings and how they work:
 
 */
 
-export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = {
+export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	noability: {
 		isNonstandard: "Past",
 		flags: {},
 		name: "No Ability",
 		rating: 0.1,
 		num: 0,
+	},
+	acclimated: {
+		onModifySpa(spa, pokemon) {
+			if (this.field.isWeather('sandstorm')) {
+				return this.chainModify(1.5);
+			}
+			if (this.field.isWeather('sunnyday')) {
+				return this.chainModify(1.5);
+			}
+			if (this.field.isWeather('raindance')) {
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpe(spe, pokemon) {
+			if (effect.id === 'snowscape') {
+				this.damage(target.baseMaxhp / 8, target, target);
+				return this.chainModify(0.67);
+		},
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm') return false;
+		},
+		flags: {},
+		name: "Acclimated",
+		rating: 3,
+		num: 315,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
@@ -1841,6 +1866,18 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		rating: 0,
 		num: 118,
 	},
+	bulletproof: {
+		onTryHit(pokemon, target, move) {
+			if (move.flags['pivot']) {
+				this.add('-immune', pokemon, '[from] ability: Honey Trap');
+				return null;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Honey Trap",
+		rating: 3,
+		num: 314,
+	},
 	hospitality: {
 		onSwitchInPriority: -2,
 		onStart(pokemon) {
@@ -2214,6 +2251,38 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Iron Fist",
 		rating: 3,
 		num: 89,
+	},
+	juiceboost: {
+		onStart(pokemon) {
+			let totaldef = 0;
+			let totalspd = 0;
+			for (const self of pokemon.foes()) {
+				totaldef += self.getStat('def', false, true);
+				totalspd += self.getStat('spd', false, true);
+			}
+			if (totaldef && totaldef >= totalspd) {
+				this.boost({ spd: 1 });
+			} else if (totalspd) {
+				this.boost({ def: 1 });
+			}
+
+			let totalatt = 0;
+			let totalspa = 0;
+			for (const self of pokemon.foes()) {
+				totalatt += self.getStat('atk', false, true);
+				totalspa += self.getStat('spa', false, true);
+			}
+			if (totalatt && totalatt >= totalspa) {
+				this.boost({ spa: 1 });
+			} else if (totalspa) {
+				this.boost({ atk: 1 });
+			}
+			}
+		},
+		flags: {},
+		name: "Juice Boost",
+		rating: 3.5,
+		num: 313,
 	},
 	justified: {
 		onDamagingHit(damage, target, source, move) {

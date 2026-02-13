@@ -3,6 +3,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "No Ability",
 		shortDesc: "Does nothing.",
 	},
+	acclimated: {
+		name: "Acclimated",
+		shortDesc: "In Sun, Rain, and Sand Special Attack is Raised by 1 stage. In snow user loses 1/8 HP each turn and Speed is lowered by 1 stage.",
+	},
 	adaptability: {
 		name: "Adaptability",
 		desc: "This Pokemon's moves that match one of its types have a same-type attack bonus (STAB) of 2 instead of 1.5.",
@@ -669,6 +673,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Honey Gather",
 		shortDesc: "No competitive use.",
 	},
+	honeytrap: {
+		name: "Honey Trap",
+		shortDesc: "Immune to pivoting moves and their effects. Hard switching is unaffected.",
+	},
 	hospitality: {
 		name: "Hospitality",
 		shortDesc: "On switch-in, this Pokemon restores 1/4 of its ally's maximum HP, rounded down.",
@@ -818,6 +826,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Iron Fist",
 		desc: "This Pokemon's punch-based attacks have their power multiplied by 1.2.",
 		shortDesc: "This Pokemon's punch-based attacks have 1.2x power. Sucker Punch is not boosted.",
+	},
+	juiceboost: {
+		name: "Juice Boost",
+		shortDesc: "This Pokemon eats two berries upon switch-in, its highest offensive and defensive stats raise by 1 stage.",
 	},
 	justified: {
 		name: "Justified",
