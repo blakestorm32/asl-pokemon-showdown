@@ -2254,9 +2254,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onStart(pokemon) {
 			let totaldef = 0;
 			let totalspd = 0;
-			for (const self of pokemon.foes()) {
-				totaldef += self.getStat('def', false, true);
-				totalspd += self.getStat('spd', false, true);
+			for (const target of pokemon.alliesAndSelf()) {
+				totaldef += target.getStat('def', false, true);
+				totalspd += target.getStat('spd', false, true);
 			}
 			if (totaldef && totaldef >= totalspd) {
 				this.boost({ spd: 1 });
@@ -2266,9 +2266,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 
 			let totalatt = 0;
 			let totalspa = 0;
-			for (const self of pokemon.foes()) {
-				totalatt += self.getStat('atk', false, true);
-				totalspa += self.getStat('spa', false, true);
+			for (const target of pokemon.alliesAndSelf()) {
+				totalatt += target.getStat('atk', false, true);
+				totalspa += target.getStat('spa', false, true);
 			}
 			if (totalatt && totalatt >= totalspa) {
 				this.boost({ spa: 1 });
