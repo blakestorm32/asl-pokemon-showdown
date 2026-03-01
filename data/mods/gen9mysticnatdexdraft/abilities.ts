@@ -2255,15 +2255,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	juiceboost: {
 		onStart(pokemon) {
-			let totaldef = 0;
-			let totalspd = 0;
-			for (const target of pokemon.alliesAndSelf()) {
-				totaldef += target.getStat('def', false, true);
-				totalspd += target.getStat('spd', false, true);
+			let totalatt = 0;
+			let totalspa = 0;
+			for (const target of pokemon.foes()) {
+				totalatt += target.getStat('atk', false, true);
+				totalspa += target.getStat('spa', false, true);
 			}
-			if (totaldef && totaldef >= totalspd) {
+			if (totalatt && totalatt >= totalspa) {
 				this.boost({ def: 1 });
-			} else if (totalspd) {
+			} else if (totalspa) {
 				this.boost({ spd: 1 });
 			}
 
