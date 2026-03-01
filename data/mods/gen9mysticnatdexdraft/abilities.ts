@@ -2267,8 +2267,6 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				this.boost({ spd: 1 });
 			}
 
-			let totalatt = 0;
-			let totalspa = 0;
 			for (const target of pokemon.alliesAndSelf()) {
 				totalatt += target.getStat('atk', false, true);
 				totalspa += target.getStat('spa', false, true);
