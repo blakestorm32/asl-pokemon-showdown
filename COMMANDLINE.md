@@ -19,7 +19,7 @@ Supported commands
 
 Note: Commands that ask for a team want the team in [packed team format](./sim/TEAMS.md#packed-format) or JSON format. Teambuilder export format is not supported.
 
-`./pokemon-showdown start [--skip-build] [PORT]`
+`node pokemon-showdown start [--skip-build] [PORT]`
 
 - Starts a PS server on the specified port
   (Defaults to the port setting in config/config.js)
@@ -31,37 +31,37 @@ Note: Commands that ask for a team want the team in [packed team format](./sim/T
   (You do not need to use `./build` when using PS as a server; it will
   be run automatically for you unless you use `--skip-build`.)
 
-`./pokemon-showdown generate-team [FORMAT-ID [RANDOM-SEED]]`
+`node pokemon-showdown generate-team [FORMAT-ID [RANDOM-SEED]]`
 
 - Generates a random team, and writes it to stdout in packed team format
   (Format defaults to the latest Random Battles format)
 
-`./pokemon-showdown validate-team [FORMAT-ID]`
+`node pokemon-showdown validate-team [FORMAT-ID]`
 
 - Reads a team in any format from stdin, and validates it
   - If valid: exits with code 0
   - If invalid: writes errors to stderr, exits with code 1
 
-`./pokemon-showdown simulate-battle`
+`node pokemon-showdown simulate-battle`
 
 - Simulates a battle, taking input to stdin and writing output to stdout
 
   Using Pokémon Showdown as a command-line simulator is documented at:
   [sim/README.md](./sim/README.md)
 
-`./pokemon-showdown json-team`
+`node pokemon-showdown json-team`
 
 - Reads a team in any format from stdin, writes the unpacked JSON to stdout
 
-`./pokemon-showdown pack-team`
+`node pokemon-showdown pack-team`
 
 - Reads a team in any format from stdin, writes the packed team to stdout
 
-`./pokemon-showdown export-team`
+`node pokemon-showdown export-team`
 
 - Reads a team in any format from stdin, writes the exported (human-readable) team to stdout
 
-`./pokemon-showdown help`
+`node pokemon-showdown help`
 
 - Displays this reference
 
