@@ -430,7 +430,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
 	},
 	{
-		name: "[Gen 9] Pre Dlc ZA Natdex Draft",
+		name: "[Gen 9] Pre DlC ZA Natdex Draft",
 		mod: 'gen9predlczanatdexdraft',
 		searchShow: false,
 		teraPreviewDefault: true,
