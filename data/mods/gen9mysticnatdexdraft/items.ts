@@ -4342,9 +4342,9 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	mysticite: {
 		name: "Mysticite",
 		spritenum: 575,
-		megaStone: ["Dudunsparce-Mega", "Dudunsparce-Three-Segment-Mega", "Delibird-Mega", "Sirfetch\u2019d-Mega", "Ariados-Mega", "Rapidash-Mega", "Rapidash-Galar-Mega", "Luvdisc-Mega", "Electrode-Mega", "Lickilicky-Mega"],
-		megaEvolves: ["Dudunsparce", "Dudunsparce-Three-Segment", "Delibird", "Sirfetch\u2019d", "Ariados", "Rapidash", "Rapidash-Galar", "Luvdisc", "Electrode", "Lickilicky"],
-		itemUser: ["Dudunsparce", "Dudunsparce-Three-Segment", "Delibird", "Sirfetch\u2019d", "Ariados", "Rapidash", "Rapidash-Galar", "Luvdisc", "Electrode", "Lickilicky"],
+		megaStone: ["Dudunsparce-Mega", "Dudunsparce-Three-Segment-Mega", "Delibird-Mega", "Sirfetch\u2019d-Mega", "Ariados-Mega", "Rapidash-Mega", "Rapidash-Galar-Mega", "Luvdisc-Mega", "Electrode-Mega", "Lickilicky-Mega", "Carnivine-Mega", "Typhlosion-Mega"],
+		megaEvolves: ["Dudunsparce", "Dudunsparce-Three-Segment", "Delibird", "Sirfetch\u2019d", "Ariados", "Rapidash", "Rapidash-Galar", "Luvdisc", "Electrode", "Lickilicky", "Carnivine", "Typhlosion"],
+		itemUser: ["Dudunsparce", "Dudunsparce-Three-Segment", "Delibird", "Sirfetch\u2019d", "Ariados", "Rapidash", "Rapidash-Galar", "Luvdisc", "Electrode", "Lickilicky", "Carnivine", "Typhlosion"],
 		onTakeItem(item, source) {
 			if (item.megaEvolves!.includes(source.baseSpecies.baseSpecies)) return false;
 			return true;

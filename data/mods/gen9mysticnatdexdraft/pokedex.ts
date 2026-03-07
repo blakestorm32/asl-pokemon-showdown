@@ -1923,7 +1923,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		num: 78,
 		name: "Rapidash-Galar-Mega",
 		baseSpecies: "Rapidash-Galar",
-		forme: "Mega",
+		forme: "Galar-Mega",
 		types: ["Dark", "Fairy"],
 		baseStats: { hp: 65, atk: 100, def: 80, spa: 130, spd: 100, spe: 125 },
 		abilities: { 0: "As One (Spectrier)" },
