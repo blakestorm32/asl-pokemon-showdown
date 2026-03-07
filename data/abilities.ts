@@ -1868,9 +1868,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 118,
 	},
 	honeytrap: {
+		onTryHitPivot: 4,
 		onTryHit(pokemon, target, move) {
 			if (move.flags['pivot']) {
-				this.add('-immune', pokemon, '[from] ability: Honey Trap');
+				this.add('-fail', move, '[from] ability: Honey Trap');
 				return null;
 			}
 		},
