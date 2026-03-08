@@ -1942,12 +1942,12 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return null;
 			}
 		},
-		onTryMove(attacker, defender, move) {
-			if (move.flags['pivot']) {
-				this.debug('Honey Trap suppress');
-				this.add('-fail', attacker, move, '[from] ability: Honey Trap');
+		onFoeTryMove(target, source, move) {
+			const honeyTrapHolder = this.effectState.target;
+			if ((move.target === 'all') && move.flags['pivot']) {
 				this.attrLastMove('[still]');
-				return null;
+				this.add('cant', honeyTrapHolder, 'ability: Honey Trap', move, `[of] ${target}`);
+				return false;
 			}
 		},
 		flags: { breakable: 1 },
