@@ -514,6 +514,40 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3,
 		num: 171,
 	},
+	burningcheer: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Burning Cheer boost');
+				return this.chainModify(1.2);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Burning Cheer boost');
+				return this.chainModify(1.2);
+			}
+		},
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Burning Cheer', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({ def: -1, spd: -1 }, target, pokemon, null, true);
+				}
+			}
+		},
+		flags: {},
+		name: "Burning Cheer",
+		rating: 3.5,
+		num: 316,
+	},
 	cheekpouch: {
 		onEatItem(item, pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
@@ -522,6 +556,40 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Cheek Pouch",
 		rating: 2,
 		num: 167,
+	},
+	chillingcheer: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Ice') {
+				this.debug('Chilling Cheer boost');
+				return this.chainModify(1.2);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Ice') {
+				this.debug('Chilling Cheer boost');
+				return this.chainModify(1.2);
+			}
+		},
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Chilling Cheer', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({ atk: -1, spa: -1 }, target, pokemon, null, true);
+				}
+			}
+		},
+		flags: {},
+		name: "Chilling Cheer",
+		rating: 3.5,
+		num: 317,
 	},
 	chillingneigh: {
 		onSourceAfterFaint(length, target, source, effect) {
@@ -1870,7 +1938,15 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	honeytrap: {
 		onTryHit(pokemon, target, move) {
 			if (move.flags['pivot']) {
-				this.add('-immune', target, '[from] ability: Honey Trap');
+				this.add('-immune', pokemon, '[from] ability: Honey Trap');
+				return null;
+			}
+		},
+		onTryMove(attacker, defender, move) {
+			if (move.flags['pivot']) {
+				this.debug('Honey Trap suppress');
+				this.add('-immune', attacker, '[from] ability: Honey Trap');
+				this.attrLastMove('[still]');
 				return null;
 			}
 		},
