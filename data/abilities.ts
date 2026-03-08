@@ -1937,10 +1937,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	honeytrap: {
 		onFoeTryMove(target, source, move) {
-			const pivotingMon = this.effectState.source;
 			if (move.flags['pivot']) {
 				this.attrLastMove('[still]');
-				this.add('cant', pivotingMon, 'ability: Honey Trap', move, `[of] ${source}`);
+				this.add('cant', target, 'ability: Honey Trap', move, `[of] ${source}`);
 				return false;
 			}
 		},
