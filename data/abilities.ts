@@ -1945,7 +1945,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onTryMove(attacker, defender, move) {
 			if (move.flags['pivot']) {
 				this.debug('Honey Trap suppress');
-				this.add('-immune', attacker, '[from] ability: Honey Trap');
+				this.add('-fail', attacker, move, '[from] ability: Honey Trap');
 				this.attrLastMove('[still]');
 				return null;
 			}
