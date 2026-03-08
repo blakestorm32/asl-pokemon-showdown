@@ -1938,7 +1938,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	honeytrap: {
 		onFoeTryMove(target, source, move) {
 			const honeyTrapHolder = this.effectState.target;
-			if ((move.target === 'all') && move.flags['pivot']) {
+			if (move.flags['pivot']) {
 				this.attrLastMove('[still]');
 				this.add('cant', honeyTrapHolder, 'ability: Honey Trap', move, `[of] ${target}`);
 				return false;
