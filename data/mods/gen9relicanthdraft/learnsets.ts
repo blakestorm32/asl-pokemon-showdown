@@ -87003,7 +87003,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			sleeptalk: ["9M", "8M"],
 			snore: ["8M"],
 			snowscape: ["9M", "9L42"],
-			soak: ["9E", "8E"]
+			soak: ["9E", "8E"],
 			stompingtantrum: ["9M"],
 			substitute: ["9M", "8M"],
 			surf: ["9M", "9L54", "8M", "8L54"],
