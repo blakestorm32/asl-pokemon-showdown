@@ -10876,8 +10876,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 	},
 	sawsbuck: {
 		num: 586,
-		name: "Sawsbuck-Spring",
-		forme: "Spring",
+		name: "Sawsbuck",
 		types: ["Normal", "Fairy"],
 		baseStats: { hp: 80, atk: 60, def: 70, spa: 110, spd: 80, spe: 105 },
 		abilities: { 0: "Swift Swim", 1: "Sap Sipper", H: "Serene Grace" },
@@ -10893,7 +10892,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 	sawsbuckautumn: {
 		num: 586,
 		name: "Sawsbuck-Autumn",
-		baseSpecies: "Sawsbuck-Spring",
+		baseSpecies: "Sawsbuck",
 		forme: "Autumn",
 		types: ["Normal", "Fighting"],
 		baseStats: { hp: 80, atk: 110, def: 80, spa: 60, spd: 70, spe: 105 },
@@ -10906,7 +10905,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 	sawsbucksummer: {
 		num: 586,
 		name: "Sawsbuck-Summer",
-		baseSpecies: "Sawsbuck-Spring",
+		baseSpecies: "Sawsbuck",
 		forme: "Summer",
 		types: ["Normal", "Grass"],
 		baseStats: { hp: 80, atk: 105, def: 80, spa: 60, spd: 80, spe: 100 },
@@ -10919,7 +10918,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 	sawsbuckwinter: {
 		num: 586,
 		name: "Sawsbuck-Winter",
-		baseSpecies: "Sawsbuck-Spring",
+		baseSpecies: "Sawsbuck",
 		forme: "Winter",
 		types: ["Normal", "Ice"],
 		baseStats: { hp: 80, atk: 60, def: 80, spa: 105, spd: 80, spe: 100 },
