@@ -1266,7 +1266,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	piercingdrill: {
 		name: "Piercing Drill",
-		shortDesc: "This Pokemon's contact moves do 25% of the original damage to the target's protection, except Max Guard.",
+		shortDesc: "This Pokemon's contact moves ignore a target's protection and deal 1/4 the usual damage.",
 	},
 	pixilate: {
 		name: "Pixilate",
@@ -2171,7 +2171,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	unseenfist: {
 		name: "Unseen Fist",
-		shortDesc: "This Pokemon's contact moves do 25% of the original damage to the target's protection, except Max Guard.",
+		shortDesc: "This Pokemon's contact moves ignore a target's protection and deal 1/4 the usual damage.",
 	},
 	vesselofruin: {
 		name: "Vessel of Ruin",

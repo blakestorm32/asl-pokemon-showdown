@@ -288,17 +288,16 @@ export interface Move extends Readonly<BasicEffect & MoveData> {
 }
 
 interface MoveHitData {
-	[targetSlotid: string]: {
-		/** Did this move crit against the target? */
-		crit: boolean,
-		/** The type effectiveness of this move against the target */
-		typeMod: number,
-		/**
-		 * Is this move a Z-Move that broke the target's protection?
-		 * (does 0.25x regular damage)
-		 */
-		zBrokeProtect: boolean,
-	};
+    [targetSlotid: string]: {
+        / Did this move crit against the target? */
+        crit: boolean,
+        / The type effectiveness of this move against the target */
+        typeMod: number,
+        /**
+         
+Is this move a Z-Move that broke the target's protection?
+(does 0.25x regular damage)*/
+    bypassProtect: boolean | Effect,};
 }
 
 type MutableMove = BasicEffect & MoveData;

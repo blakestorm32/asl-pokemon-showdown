@@ -1297,6 +1297,17 @@ export class Battle {
 		}
 		return !!move.flags['contact'];
 	}
+	
+	checkMoveBypassesProtect(move: ActiveMove, attacker: Pokemon, defender: Pokemon, blockStatus = true) {
+        if ((move.category !== 'Status' || blockStatus) && move.flags['protect'] &&
+            this.runEvent('HitProtect', attacker, defender, move)) {
+            return false;
+        }
+        if (move.isZOrMaxPowered && !['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) {
+            defender.getMoveHitData(move).bypassProtect = true;
+        }
+        return true;
+    }
 
 	getPokemon(fullname: string | Pokemon) {
 		if (typeof fullname !== 'string') fullname = fullname.fullname;

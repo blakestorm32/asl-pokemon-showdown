@@ -444,6 +444,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
 	},
 	{
+		name: "[Gen 9] ZA + Champs NatDex Draft",
+		mod: 'gen9zachampionsnatdexdraft',
+		searchShow: false,
+		teraPreviewDefault: true,
+		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
+	},
+	{
 		name: "[Gen 9] Champions NatDex Draft",
 		mod: 'gen9championsnatdexdraft',
 		searchShow: false,
