@@ -289,9 +289,9 @@ export interface Move extends Readonly<BasicEffect & MoveData> {
 
 interface MoveHitData {
     [targetSlotid: string]: {
-        / Did this move crit against the target? */
+        // Did this move crit against the target? */
         crit: boolean,
-        / The type effectiveness of this move against the target */
+        // The type effectiveness of this move against the target */
         typeMod: number,
         /**
          
