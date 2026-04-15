@@ -3876,6 +3876,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 				}
 			},
 		},
+		shortDesc: "30% chance to sleep, poison, or paralyze target.",
 		target: "normal",
 		type: "Poison",
 	},
@@ -6383,10 +6384,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		onEffectiveness(typeMod, target, type) {
 			if (type === 'Water') return 1;
 		},
-		secondary: {
-			chance: 10,
-			status: 'frz',
-		},
+		shortDesc: "Super effective on Water",
 		target: "normal",
 		type: "Ice",
 		contestType: "Beautiful",
@@ -10088,6 +10086,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			chance: 20,
 			volatileStatus: 'flinch',
 		},
+		shortDesc: "20% chance to make the target flinch.",
 		target: "normal",
 		type: "Steel",
 		contestType: "Tough",
@@ -12670,6 +12669,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 				spa: -1,
 			},
 		},
+		shortDesc: "10% chance to lower the target's Sp. Atk by 1.",
 		target: "normal",
 		type: "Fairy",
 		contestType: "Beautiful",
@@ -16220,6 +16220,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			chance: 100,
 			volatileStatus: 'saltcure',
 		},
+		shortDesc: "Deals 1/16 max HP each turn; 1/8 on Steel, Water.",
 		target: "normal",
 		type: "Rock",
 	},
@@ -20545,6 +20546,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			spe: -2,
 		},
 		secondary: null,
+		shortDesc: "Lowers the target's Speed by 2 and poisons it.",
 		target: "normal",
 		type: "Poison",
 		zMove: { boost: { spe: 1 } },
