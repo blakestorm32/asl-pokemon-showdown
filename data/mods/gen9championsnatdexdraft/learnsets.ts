@@ -87197,7 +87197,6 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			zenheadbutt: ["9M"],
 		},
 		eventData: [
-		eventData: [
 			{generation: 9, level: 50, shiny: true, nature: "Naive", ivs: {hp: 20, atk: 31, def: 20, spa: 31, spd: 20, spe: 31}, moves: ["drainingkiss", "extrasensory", "moonblast"], pokeball: "cherishball"},
 		],
 		eventOnly: true,
