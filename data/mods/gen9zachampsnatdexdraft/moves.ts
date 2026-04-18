@@ -1039,11 +1039,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect']) {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
+				if (this.checkMoveBypassesProtect(move, source, target)) return;
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -2110,11 +2106,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect'] || move.category === 'Status') {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
+				if (this.checkMoveBypassesProtect(move, source, target)) return;
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -2128,7 +2120,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 					}
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('brn', target);
+					source.trySetStatus('psn', target);
 				}
 				return this.NOT_FAIL;
 			},
@@ -10290,11 +10282,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect'] || move.category === 'Status') {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
+				if (this.checkMoveBypassesProtect(move, source, target)) return;
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -10308,7 +10296,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 					}
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
-					this.boost({ atk: -1 }, source, target, this.dex.getActiveMove("King's Shield"));
+					source.trySetStatus('psn', target);
 				}
 				return this.NOT_FAIL;
 			},
@@ -11411,19 +11399,21 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect']) {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
+				if (this.checkMoveBypassesProtect(move, source, target)) return;
+				if (move.smartTarget) {
+					move.smartTarget = false;
+				} else {
+					this.add('-activate', target, 'move: Protect');
 				}
-				if (move && (move.target === 'self' || move.category === 'Status')) return;
-				this.add('-activate', target, 'move: Mat Block', move.name);
 				const lockedmove = source.getVolatile('lockedmove');
 				if (lockedmove) {
 					// Outrage counter is reset
 					if (source.volatiles['lockedmove'].duration === 2) {
 						delete source.volatiles['lockedmove'];
 					}
+				}
+				if (this.checkMoveMakesContact(move, source, target)) {
+					source.trySetStatus('psn', target);
 				}
 				return this.NOT_FAIL;
 			},
@@ -13344,11 +13334,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect'] || move.category === 'Status') {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
+				if (this.checkMoveBypassesProtect(move, source, target)) return;
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -13362,7 +13348,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 					}
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
-					this.boost({ def: -2 }, source, target, this.dex.getActiveMove("Obstruct"));
+					source.trySetStatus('psn', target);
 				}
 				return this.NOT_FAIL;
 			},
@@ -14475,11 +14461,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect']) {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
+				if (this.checkMoveBypassesProtect(move, source, target)) return;
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -14491,6 +14473,9 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 					if (source.volatiles['lockedmove'].duration === 2) {
 						delete source.volatiles['lockedmove'];
 					}
+				}
+				if (this.checkMoveMakesContact(move, source, target)) {
+					source.trySetStatus('psn', target);
 				}
 				return this.NOT_FAIL;
 			},
@@ -15030,11 +15015,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 				// Quick Guard blocks moves with positive priority, even those given increased priority by Prankster or Gale Wings.
 				// (e.g. it blocks 0 priority moves boosted by Prankster or Gale Wings; Quick Claw/Custap Berry do not count)
 				if (move.priority <= 0.1) return;
-				if (!move.flags['protect']) {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
+				if (this.checkMoveBypassesProtect(move, source, target)) return;
 				this.add('-activate', target, 'move: Quick Guard');
 				const lockedmove = source.getVolatile('lockedmove');
 				if (lockedmove) {
@@ -17020,10 +17001,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect'] || move.category === 'Status') {
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
+				if (this.checkMoveBypassesProtect(move, source, target, false)) return;
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -18211,11 +18189,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect']) {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
+				if (this.checkMoveBypassesProtect(move, source, target, false)) return;
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {
@@ -18229,7 +18203,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 					}
 				}
 				if (this.checkMoveMakesContact(move, source, target)) {
-					this.damage(source.baseMaxhp / 8, source, target);
+					this.boost({ spe: -1 }, source, target, this.dex.getActiveMove("Silk Trap"));
 				}
 				return this.NOT_FAIL;
 			},
@@ -21618,22 +21592,21 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 4,
 			onTryHit(target, source, move) {
-				// Wide Guard blocks all spread moves
-				if (move?.target !== 'allAdjacent' && move.target !== 'allAdjacentFoes') {
-					return;
+				if (this.checkMoveBypassesProtect(move, source, target, false)) return;
+				if (move.smartTarget) {
+					move.smartTarget = false;
+				} else {
+					this.add('-activate', target, 'move: Protect');
 				}
-				if (move.isZ || move.isMax) {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
-				this.add('-activate', target, 'move: Wide Guard');
 				const lockedmove = source.getVolatile('lockedmove');
 				if (lockedmove) {
 					// Outrage counter is reset
 					if (source.volatiles['lockedmove'].duration === 2) {
 						delete source.volatiles['lockedmove'];
 					}
+				}
+				if (this.checkMoveMakesContact(move, source, target)) {
+					this.boost({ spe: -1 }, source, target, this.dex.getActiveMove("Silk Trap"));
 				}
 				return this.NOT_FAIL;
 			},
