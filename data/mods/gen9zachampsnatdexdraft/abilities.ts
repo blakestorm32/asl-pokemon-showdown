@@ -3253,6 +3253,7 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 				return false;
 			}
 		},
+		shortDesc: "This Pokemon's contact moves ignore a target's protection and deal 1/4 the usual damage.",
 		flags: {},
 		name: "Piercing Drill",
 		rating: 2,
@@ -5247,6 +5248,7 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 				return false;
 			}
 		},
+		shortDesc: "This Pokemon's contact moves ignore a target's protection and deal 1/4 the usual damage.",
 		flags: {},
 		name: "Unseen Fist",
 		rating: 2,
