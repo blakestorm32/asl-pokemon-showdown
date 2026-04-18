@@ -1,4 +1,4 @@
-export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
+export const Conditions: import('../../../sim/dex-conditions').ConditionDataTable = {
 	brn: {
 		name: 'brn',
 		effectType: 'Status',
@@ -18,7 +18,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	par: {
-		inherit: true,
 		onBeforeMove(pokemon) {
 			if (this.randomChance(1, 8)) {
 				this.add('cant', pokemon, 'par');
@@ -27,7 +26,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	slp: {
-		inherit: true,
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'slp', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
@@ -47,29 +45,25 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	frz: {
-		inherit: true,
+		name: 'frz',
+		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'frz', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
 			} else {
 				this.add('-status', target, 'frz');
 			}
-			if (target.species.name === 'Shaymin-Sky' && target.baseSpecies.baseSpecies === 'Shaymin') {
-				target.formeChange('Shaymin', this.effect, true);
-			}
-
-			this.effectState.startTime = 3;
-			this.effectState.time = this.effectState.startTime;
 		},
-		onBeforeMove(pokemon, target, move) {
-			if (move.flags['defrost'] && !(move.id === 'burnup' && !pokemon.hasType('Fire'))) return;
-			pokemon.statusState.time--;
-			if (pokemon.statusState.time <= 0 || this.randomChance(1, 4)) {
-				pokemon.cureStatus();
-				return;
+		onModifyDamage(damage, source, target, move) {
+			if (move.category == 'Special' && source.status === 'frz') {
+				this.debug('Freeze damage reduction');
+				return this.chainModify(0.5);
 			}
-			this.add('cant', pokemon, 'frz');
-			return false;
+		},
+		// Damage reduction is handled directly in the sim/battle.js damage function
+		onResidualOrder: 10,
+		onResidual(pokemon) {
+			this.damage(pokemon.baseMaxhp / 16);
 		},
 	},
 	psn: {
@@ -426,7 +420,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 	// weather is implemented here since it's so important to the game
 
 	raindance: {
-		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'raindance') return;
 			if (move.type === 'Water') {
@@ -440,7 +433,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	primordialsea: {
-		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'primordialsea') return;
 			if (move.type === 'Water') {
@@ -450,7 +442,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	sunnyday: {
-		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'sunnyday') return;
 			if (move.id === 'hydrosteam') {
@@ -468,7 +459,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	desolateland: {
-		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'desolateland') return;
 			if (move.type === 'Fire') {
@@ -478,7 +468,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	sandstorm: {
-		inherit: true,
 		onModifySpD(spd, target, source) {
 			if (target.hasType('Rock') && source.effectiveWeather() === 'sandstorm') {
 				return this.modify(spd, 1.5);
@@ -486,7 +475,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	snowscape: {
-		inherit: true,
 		onModifyDef(def, target, source) {
 			if (target.hasType('Ice') && source.effectiveWeather() === 'snowscape') {
 				return this.modify(def, 1.5);

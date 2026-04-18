@@ -1,4 +1,4 @@
-export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
+export const Conditions: import('../../../sim/dex-conditions').ConditionDataTable = {
 	brn: {
 		name: 'brn',
 		effectType: 'Status',
@@ -18,7 +18,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	par: {
-		inherit: true,
 		onBeforeMove(pokemon) {
 			if (this.randomChance(1, 8)) {
 				this.add('cant', pokemon, 'par');
@@ -27,7 +26,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	slp: {
-		inherit: true,
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'slp', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
@@ -47,7 +45,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	frz: {
-		inherit: true,
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'frz', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
@@ -426,7 +423,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 	// weather is implemented here since it's so important to the game
 
 	raindance: {
-		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'raindance') return;
 			if (move.type === 'Water') {
@@ -440,7 +436,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	primordialsea: {
-		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'primordialsea') return;
 			if (move.type === 'Water') {
@@ -450,7 +445,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	sunnyday: {
-		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'sunnyday') return;
 			if (move.id === 'hydrosteam') {
@@ -468,7 +462,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	desolateland: {
-		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'desolateland') return;
 			if (move.type === 'Fire') {
@@ -478,7 +471,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	sandstorm: {
-		inherit: true,
 		onModifySpD(spd, target, source) {
 			if (target.hasType('Rock') && source.effectiveWeather() === 'sandstorm') {
 				return this.modify(spd, 1.5);
@@ -486,7 +478,6 @@ export const Conditions: import('../sim/dex-conditions').ConditionDataTable = {
 		},
 	},
 	snowscape: {
-		inherit: true,
 		onModifyDef(def, target, source) {
 			if (target.hasType('Ice') && source.effectiveWeather() === 'snowscape') {
 				return this.modify(def, 1.5);
