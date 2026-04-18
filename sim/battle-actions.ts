@@ -1905,25 +1905,29 @@ export class BattleActions {
 		return null;
 	}
 
-	runMegaEvo(pokemon: Pokemon) {
-		const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst;
-		if (!speciesid) return false;
+	runMegaEvo(pokemon: Pokemon, format: ID) {
+    const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst;
+    if (!speciesid) return false;
 
-		pokemon.formeChange(speciesid, pokemon.getItem(), true);
+    pokemon.formeChange(speciesid, pokemon.getItem(), true);
 
-		// Limit one mega evolution
-		const wasMega = pokemon.canMegaEvo;
-		for (const ally of pokemon.side.pokemon) {
-			if (wasMega) {
-				ally.canMegaEvo = false;
-			} else {
-				ally.canUltraBurst = null;
-			}
-		}
+    // ONLY enforce single Mega in non-mod formats
+    const modFormatId = 'gen9mysticnatdexdraft';
 
-		this.battle.runEvent('AfterMega', pokemon);
-		return true;
-	}
+    if (this.battle.format.id !== modFormatId) {
+        const wasMega = pokemon.canMegaEvo;
+        for (const ally of pokemon.side.pokemon) {
+            if (wasMega) {
+                ally.canMegaEvo = false;
+            } else {
+                ally.canUltraBurst = null;
+            }
+        }
+    }
+
+    this.battle.runEvent('AfterMega', pokemon);
+    return true;
+}
 
 	// Let's Go
 	canMegaEvoX?: (this: BattleActions, pokemon: Pokemon) => string | null;
