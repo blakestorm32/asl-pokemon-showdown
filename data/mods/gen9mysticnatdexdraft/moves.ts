@@ -10462,6 +10462,8 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
+		desc: "Power is equal to 50+(X*20), where X is the total number of times any Pokemon has fainted on the user's side, and X cannot be greater than 100.",
+		shortDesc: "+20 power for each time a party member fainted.",
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
