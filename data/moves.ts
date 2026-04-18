@@ -20835,7 +20835,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 	tropkick: {
 		num: 688,
 		accuracy: 100,
-		basePower: 85,
+		basePower: 70,
 		category: "Physical",
 		name: "Trop Kick",
 		pp: 15,
