@@ -1,5 +1,6 @@
 export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDataTable = {
 	brn: {
+		inherit: true,
 		name: 'brn',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
@@ -18,6 +19,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	par: {
+		inherit: true,
 		onBeforeMove(pokemon) {
 			if (this.randomChance(1, 8)) {
 				this.add('cant', pokemon, 'par');
@@ -26,6 +28,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	slp: {
+		inherit: true,
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'slp', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
@@ -45,6 +48,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	frz: {
+		inherit: true,
 		onStart(target, source, sourceEffect) {
 			if (sourceEffect && sourceEffect.effectType === 'Ability') {
 				this.add('-status', target, 'frz', '[from] ability: ' + sourceEffect.name, `[of] ${source}`);
@@ -70,6 +74,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	psn: {
+		inherit: true,
 		name: 'psn',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
@@ -85,6 +90,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	tox: {
+		inherit: true,
 		name: 'tox',
 		effectType: 'Status',
 		onStart(target, source, sourceEffect) {
@@ -109,6 +115,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	confusion: {
+		inherit: true,
 		name: 'confusion',
 		// this is a volatile status
 		onStart(target, source, sourceEffect) {
@@ -145,6 +152,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	flinch: {
+		inherit: true,
 		name: 'flinch',
 		duration: 1,
 		onBeforeMovePriority: 8,
@@ -155,6 +163,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	trapped: {
+		inherit: true,
 		name: 'trapped',
 		noCopy: true,
 		onTrapPokemon(pokemon) {
@@ -165,10 +174,12 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	trapper: {
+		inherit: true,
 		name: 'trapper',
 		noCopy: true,
 	},
 	partiallytrapped: {
+		inherit: true,
 		name: 'partiallytrapped',
 		duration: 5,
 		durationCallback(target, source) {
@@ -200,6 +211,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	lockedmove: {
+		inherit: true,
 		// Outrage, Thrash, Petal Dance...
 		name: 'lockedmove',
 		duration: 2,
@@ -234,6 +246,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	twoturnmove: {
+		inherit: true,
 		// Skull Bash, SolarBeam, Sky Drop...
 		name: 'twoturnmove',
 		duration: 2,
@@ -271,6 +284,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	choicelock: {
+		inherit: true,
 		name: 'choicelock',
 		noCopy: true,
 		onStart(pokemon) {
@@ -311,6 +325,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	mustrecharge: {
+		inherit: true,
 		name: 'mustrecharge',
 		duration: 2,
 		onBeforeMovePriority: 11,
@@ -326,6 +341,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		onLockMove: 'recharge',
 	},
 	futuremove: {
+		inherit: true,
 		// this is a slot condition
 		name: 'futuremove',
 		onStart(target) {
@@ -371,6 +387,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	healreplacement: {
+		inherit: true,
 		// this is a slot condition
 		name: 'healreplacement',
 		onStart(target, source, sourceEffect) {
@@ -386,6 +403,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	stall: {
+		inherit: true,
 		// Protect, Detect, Endure counter
 		name: 'stall',
 		duration: 2,
@@ -410,6 +428,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	gem: {
+		inherit: true,
 		name: 'gem',
 		duration: 1,
 		affectsFainted: true,
@@ -423,6 +442,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	// weather is implemented here since it's so important to the game
 
 	raindance: {
+		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'raindance') return;
 			if (move.type === 'Water') {
@@ -436,6 +456,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	primordialsea: {
+		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'primordialsea') return;
 			if (move.type === 'Water') {
@@ -445,6 +466,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	sunnyday: {
+		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'sunnyday') return;
 			if (move.id === 'hydrosteam') {
@@ -462,6 +484,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	desolateland: {
+		inherit: true,
 		onWeatherModifyDamage(damage, attacker, defender, move) {
 			if (attacker.effectiveWeather() !== 'desolateland') return;
 			if (move.type === 'Fire') {
@@ -471,6 +494,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	sandstorm: {
+		inherit: true,
 		onModifySpD(spd, target, source) {
 			if (target.hasType('Rock') && source.effectiveWeather() === 'sandstorm') {
 				return this.modify(spd, 1.5);
@@ -478,6 +502,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	snowscape: {
+		inherit: true,
 		onModifyDef(def, target, source) {
 			if (target.hasType('Ice') && source.effectiveWeather() === 'snowscape') {
 				return this.modify(def, 1.5);
@@ -485,6 +510,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	deltastream: {
+		inherit: true,
 		name: 'DeltaStream',
 		effectType: 'Weather',
 		duration: 0,
@@ -509,6 +535,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 
 	dynamax: {
+		inherit: true,
 		name: 'Dynamax',
 		noCopy: true,
 		onStart(pokemon) {
@@ -565,6 +592,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	// Commander needs two conditions so they are implemented here
 	// Dondozo
 	commanded: {
+		inherit: true,
 		name: "Commanded",
 		noCopy: true,
 		onStart(pokemon) {
@@ -582,6 +610,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	},
 	// Tatsugiri
 	commanding: {
+		inherit: true,
 		name: "Commanding",
 		noCopy: true,
 		onDragOutPriority: 2,
@@ -608,6 +637,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 	// in the Pokedex, so that needs to be overridden.
 	// This is mainly relevant for Hackmons Cup and Balanced Hackmons.
 	arceus: {
+		inherit: true,
 		name: 'Arceus',
 		onTypePriority: 1,
 		onType(types, pokemon) {
@@ -623,6 +653,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	silvally: {
+		inherit: true,
 		name: 'Silvally',
 		onTypePriority: 1,
 		onType(types, pokemon) {
@@ -638,6 +669,7 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
 		},
 	},
 	rolloutstorage: {
+		inherit: true,
 		name: 'rolloutstorage',
 		duration: 2,
 		onBasePower(relayVar, source, target, move) {
