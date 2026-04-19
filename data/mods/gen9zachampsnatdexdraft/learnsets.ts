@@ -29197,7 +29197,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			naturalgift: ["4M"],
 			nightslash: ["9L27", "7L27", "6L27", "5L27", "4L31"],
 			payback: ["7M", "6M", "5M", "4M"],
-			pinmissle: ["9M"],
+			pinmissile: ["9M"],
 			poisonjab: ["9M", "9L1", "7M", "7L1", "6M", "6L1", "5M", "5L1", "4M", "4L1"],
 			poisontail: ["9M"],
 			powerwhip: ["9M"],
