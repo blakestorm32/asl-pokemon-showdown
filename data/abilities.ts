@@ -32,13 +32,39 @@ Ratings and how they work:
 
 */
 
-export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = {
+export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	noability: {
 		isNonstandard: "Past",
 		flags: {},
 		name: "No Ability",
 		rating: 0.1,
 		num: 0,
+	},
+	acclimated: {
+		onModifySpAPriority: 5,
+		onModifySpA(spa, pokemon) {
+			if (['sunnyday', 'desolateland', 'raindance', 'primordialsea', 'sandstorm'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpe(spe, pokemon) {
+			if (['snowscape'].includes(pokemon.effectiveWeather())) {
+				return this.chainModify(0.67);
+			}
+		},
+		onWeather(target, source, effect) {
+			if (target.hasItem('utilityumbrella')) return;
+			if (effect.id === 'snowscape') {
+				this.damage(target.baseMaxhp / 8, target, target);
+			}
+		},
+		onImmunity(type, pokemon) {
+			if (type === 'sandstorm') return false;
+		},
+		flags: {},
+		name: "Acclimated",
+		rating: 3,
+		num: 319,
 	},
 	adaptability: {
 		onModifySTAB(stab, source, target, move) {
@@ -488,6 +514,40 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		rating: 3,
 		num: 171,
 	},
+	burningcheer: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Burning Cheer boost');
+				return this.chainModify(1.2);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Burning Cheer boost');
+				return this.chainModify(1.2);
+			}
+		},
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Burning Cheer', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({ def: -1, spd: -1 }, target, pokemon, null, true);
+				}
+			}
+		},
+		flags: {},
+		name: "Burning Cheer",
+		rating: 3.5,
+		num: 320,
+	},
 	cheekpouch: {
 		onEatItem(item, pokemon) {
 			this.heal(pokemon.baseMaxhp / 3);
@@ -496,6 +556,40 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Cheek Pouch",
 		rating: 2,
 		num: 167,
+	},
+	chillingcheer: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Ice') {
+				this.debug('Chilling Cheer boost');
+				return this.chainModify(1.2);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Ice') {
+				this.debug('Chilling Cheer boost');
+				return this.chainModify(1.2);
+			}
+		},
+		onStart(pokemon) {
+			let activated = false;
+			for (const target of pokemon.adjacentFoes()) {
+				if (!activated) {
+					this.add('-ability', pokemon, 'Chilling Cheer', 'boost');
+					activated = true;
+				}
+				if (target.volatiles['substitute']) {
+					this.add('-immune', target);
+				} else {
+					this.boost({ atk: -1, spa: -1 }, target, pokemon, null, true);
+				}
+			}
+		},
+		flags: {},
+		name: "Chilling Cheer",
+		rating: 3.5,
+		num: 321,
 	},
 	chillingneigh: {
 		onSourceAfterFaint(length, target, source, effect) {
@@ -1676,6 +1770,21 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		rating: 4,
 		num: 229,
 	},
+	greatsword: {
+		onModifyDamage(damage, source, target, move) {
+			if (target.getMoveHitData(move).typeMod < 0) {
+				this.debug('Greatsword boost');
+				return this.chainModify(2);
+			}
+		},
+		onModifyMove(move) {
+			delete move.flags['contact'];
+		},
+		flags: {},
+		name: "Greatsword",
+		rating: 4,
+		num: 315,
+	},
 	grimneigh: {
 		onSourceAfterFaint(length, target, source, effect) {
 			if (effect && effect.effectType === 'Move') {
@@ -1793,6 +1902,19 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		rating: 0,
 		num: 131,
 	},
+	heatedcharge: {
+		onChargeMove(pokemon, target, move) {{
+			this.debug('heated charge - remove charge turn for ' + move.id);
+			this.attrLastMove('[still]');
+			this.addMove('-anim', pokemon, move.name, target);
+			return false; // skip charge turn
+			}
+		},
+		flags: {},
+		name: "Heated Charge",
+		rating: 4,
+		num: 317,
+	},
 	heatproof: {
 		onSourceModifyAtkPriority: 6,
 		onSourceModifyAtk(atk, attacker, defender, move) {
@@ -1833,6 +1955,19 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Honey Gather",
 		rating: 0,
 		num: 118,
+	},
+	honeytrap: {
+		onFoeTryMove(target, source, move) {
+			if (move.flags['pivot']) {
+				this.attrLastMove('[still]');
+				this.add('cant', target, 'ability: Honey Trap', move, `[of] ${source}`);
+				return false;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Honey Trap",
+		rating: 3,
+		num: 316,
 	},
 	hospitality: {
 		onSwitchInPriority: -2,
@@ -2207,6 +2342,35 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Iron Fist",
 		rating: 3,
 		num: 89,
+	},
+	juiceboost: {
+		onStart(pokemon) {
+			let totalatt = 0;
+			let totalspa = 0;
+			for (const target of pokemon.foes()) {
+				totalatt += target.getStat('atk', false, true);
+				totalspa += target.getStat('spa', false, true);
+			}
+			if (totalatt && totalatt >= totalspa) {
+				this.boost({ def: 1 });
+			} else if (totalspa) {
+				this.boost({ spd: 1 });
+			}
+
+			for (const target of pokemon.alliesAndSelf()) {
+				totalatt += target.getStat('atk', false, true);
+				totalspa += target.getStat('spa', false, true);
+			}
+			if (totalatt && totalatt >= totalspa) {
+				this.boost({ atk: 1 });
+			} else if (totalspa) {
+				this.boost({ spa: 1 });
+			}
+		},
+		flags: {},
+		name: "Juice Boost",
+		rating: 3.5,
+		num: 318,
 	},
 	justified: {
 		onDamagingHit(damage, target, source, move) {

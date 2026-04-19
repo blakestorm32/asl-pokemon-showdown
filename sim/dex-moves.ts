@@ -52,6 +52,7 @@ interface MoveFlags {
 	noparentalbond?: 1; // Cannot be made to hit twice via Parental Bond.
 	nosketch?: 1; // Cannot be copied by Sketch.
 	nosleeptalk?: 1; // Cannot be selected by Sleep Talk.
+	pivot?: 1; // The move is a pivot, and switches out the user after use.
 	pledgecombo?: 1; // Gems will not activate. Cannot be redirected by Storm Drain / Lightning Rod.
 	powder?: 1; // Has no effect on Pokemon which are Grass-type, have the Ability Overcoat, or hold Safety Goggles.
 	protect?: 1; // Blocked by Detect, Protect, Spiky Shield, and if not a Status move, King's Shield.
