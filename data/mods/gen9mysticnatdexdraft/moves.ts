@@ -1052,9 +1052,6 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
-				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('psn', target);
-				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
@@ -2119,9 +2116,6 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
-				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('psn', target);
-				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
@@ -2475,7 +2469,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Chilly Reception",
 		pp: 10,
 		priority: 0,
-		flags: {pivot: 1 },
+		flags: { pivot: 1 },
 		priorityChargeCallback(source) {
 			source.addVolatile('chillyreception');
 		},
@@ -10295,9 +10289,6 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
-				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('psn', target);
-				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
@@ -10455,15 +10446,13 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		accuracy: 100,
 		basePower: 50,
 		basePowerCallback(pokemon, target, move) {
-			return 50 + 20 * pokemon.side.totalFainted;
+			return 50 + 50 * pokemon.side.totalFainted;
 		},
 		category: "Physical",
 		name: "Last Respects",
 		pp: 10,
 		priority: 0,
 		flags: { protect: 1, mirror: 1, metronome: 1 },
-		desc: "Power is equal to 50+(X*20), where X is the total number of times any Pokemon has fainted on the user's side, and X cannot be greater than 100.",
-		shortDesc: "+20 power for each time a party member fainted.",
 		secondary: null,
 		target: "normal",
 		type: "Ghost",
@@ -11411,9 +11400,6 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 					if (source.volatiles['lockedmove'].duration === 2) {
 						delete source.volatiles['lockedmove'];
 					}
-				}
-				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('psn', target);
 				}
 				return this.NOT_FAIL;
 			},
@@ -13347,9 +13333,6 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
-				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('psn', target);
-				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
@@ -14473,9 +14456,6 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 					if (source.volatiles['lockedmove'].duration === 2) {
 						delete source.volatiles['lockedmove'];
 					}
-				}
-				if (this.checkMoveMakesContact(move, source, target)) {
-					source.trySetStatus('psn', target);
 				}
 				return this.NOT_FAIL;
 			},
@@ -16733,7 +16713,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Shed Tail",
 		pp: 10,
 		priority: 0,
-		flags: {pivot: 1 },
+		flags: { pivot: 1 },
 		volatileStatus: 'substitute',
 		onTryHit(source) {
 			if (!this.canSwitch(source.side) || source.volatiles['commanded']) {
@@ -18166,59 +18146,58 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		contestType: "Clever",
 	},
 	spikyshield: {
-		num: 596,
-		accuracy: true,
-		basePower: 0,
-		category: "Status",
-		name: "Spiky Shield",
-		pp: 5,
-		priority: 4,
-		flags: { noassist: 1, failcopycat: 1 },
-		stallingMove: true,
-		volatileStatus: 'spikyshield',
-		onPrepareHit(pokemon) {
-			return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
-		},
-		onHit(pokemon) {
-			pokemon.addVolatile('stall');
-		},
-		condition: {
-			duration: 1,
-			onStart(target) {
-				this.add('-singleturn', target, 'move: Protect');
-			},
-			onTryHitPriority: 3,
-			onTryHit(target, source, move) {
-				if (this.checkMoveBypassesProtect(move, source, target, false)) return;
-				if (move.smartTarget) {
-					move.smartTarget = false;
-				} else {
-					this.add('-activate', target, 'move: Protect');
-				}
-				const lockedmove = source.getVolatile('lockedmove');
-				if (lockedmove) {
-					// Outrage counter is reset
-					if (source.volatiles['lockedmove'].duration === 2) {
-						delete source.volatiles['lockedmove'];
-					}
-				}
-				if (this.checkMoveMakesContact(move, source, target)) {
-					this.boost({ spe: -1 }, source, target, this.dex.getActiveMove("Silk Trap"));
-				}
-				return this.NOT_FAIL;
-			},
-			onHit(target, source, move) {
-				if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
-					this.damage(source.baseMaxhp / 8, source, target);
-				}
-			},
-		},
-		secondary: null,
-		target: "self",
-		type: "Grass",
-		zMove: { boost: { def: 1 } },
-		contestType: "Tough",
-	},
+        num: 596,
+        accuracy: true,
+        basePower: 0,
+        category: "Status",
+        name: "Spiky Shield",
+        pp: 10,
+        priority: 4,
+        flags: { noassist: 1, failcopycat: 1 },
+        stallingMove: true,
+        volatileStatus: 'spikyshield',
+        onPrepareHit(pokemon) {
+            return !!this.queue.willAct() && this.runEvent('StallMove', pokemon);
+        },
+        onHit(pokemon) {
+            pokemon.addVolatile('stall');
+        },
+        condition: {
+            duration: 1,
+            onStart(target) {
+                this.add('-singleturn', target, 'move: Protect');
+            },
+            onTryHitPriority: 3,
+            onTryHit(target, source, move) {
+                if (this.checkMoveBypassesProtect(move, source, target)) return;
+                if (move.smartTarget) {
+                    move.smartTarget = false;
+                } else {
+                    this.add('-activate', target, 'move: Protect');
+                }
+                const lockedmove = source.getVolatile('lockedmove');
+                if (lockedmove) {
+                    // Outrage counter is reset
+                    if (source.volatiles['lockedmove'].duration === 2) {
+                        delete source.volatiles['lockedmove'];
+                    }
+                }
+                if (this.checkMoveMakesContact(move, source, target)) {
+                    this.damage(source.baseMaxhp / 8, source, target);
+                }
+                return this.NOT_FAIL;
+            },
+            onHit(target, source, move) {
+                if (move.isZOrMaxPowered && this.checkMoveMakesContact(move, source, target)) {
+                    this.damage(source.baseMaxhp / 8, source, target);
+                }
+            },
+        },
+        target: "self",
+        type: "Grass",
+        zMove: { boost: { def: 1 } },
+        contestType: "Tough",
+    },
 	spinout: {
 		num: 859,
 		accuracy: 100,
