@@ -6859,7 +6859,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		types: ["Water", "Fairy"],
 		genderRatio: { M: 0.25, F: 0.75 },
 		baseStats: { hp: 73, atk: 70, def: 75, spa: 120, spd: 85, spe: 117 },
-		abilities: { 0: "Swift Swim", H: "Soul Heart" },
+		abilities: { 0: "Swift Swim", H: "Soul-Heart" },
 		heightm: 0.6,
 		weightkg: 8.7,
 		color: "Pink",
