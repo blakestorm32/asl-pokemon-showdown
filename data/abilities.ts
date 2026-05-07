@@ -529,18 +529,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(1.2);
 			}
 		},
-		onStart(pokemon) {
-			let activated = false;
-			for (const target of pokemon.adjacentFoes()) {
-				if (!activated) {
-					this.add('-ability', pokemon, 'Burning Cheer', 'boost');
-					activated = true;
-				}
-				if (target.volatiles['substitute']) {
-					this.add('-immune', target);
-				} else {
-					this.boost({ def: -1, spd: -1 }, target, pokemon, null, true);
-				}
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (!target.hp) {
+				this.actions.useMove('healingwish', target);
 			}
 		},
 		flags: {},
@@ -572,18 +564,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 				return this.chainModify(1.2);
 			}
 		},
-		onStart(pokemon) {
-			let activated = false;
-			for (const target of pokemon.adjacentFoes()) {
-				if (!activated) {
-					this.add('-ability', pokemon, 'Chilling Cheer', 'boost');
-					activated = true;
-				}
-				if (target.volatiles['substitute']) {
-					this.add('-immune', target);
-				} else {
-					this.boost({ atk: -1, spa: -1 }, target, pokemon, null, true);
-				}
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (!target.hp) {
+				this.actions.useMove('healingwish', target);
 			}
 		},
 		flags: {},
@@ -2345,25 +2329,27 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	},
 	juiceboost: {
 		onStart(pokemon) {
-			let totalatt = 0;
-			let totalspa = 0;
+			let totalattfoe = 0;
+			let totalspafoe = 0;
 			for (const target of pokemon.foes()) {
-				totalatt += target.getStat('atk', false, true);
-				totalspa += target.getStat('spa', false, true);
+				totalattfoe += target.getStat('atk', false, true);
+				totalspafoe += target.getStat('spa', false, true);
 			}
-			if (totalatt && totalatt >= totalspa) {
+			if (totalattfoe && totalattfoe >= totalspafoe) {
 				this.boost({ def: 1 });
-			} else if (totalspa) {
+			} else if (totalspafoe) {
 				this.boost({ spd: 1 });
 			}
 
+			let totalattself = 0;
+			let totalspaself = 0;
 			for (const target of pokemon.alliesAndSelf()) {
-				totalatt += target.getStat('atk', false, true);
-				totalspa += target.getStat('spa', false, true);
+				totalattself += target.getStat('atk', false, true);
+				totalspaself += target.getStat('spa', false, true);
 			}
-			if (totalatt && totalatt >= totalspa) {
+			if (totalattself && totalattself >= totalspaself) {
 				this.boost({ atk: 1 });
-			} else if (totalspa) {
+			} else if (totalspaself) {
 				this.boost({ spa: 1 });
 			}
 		},
