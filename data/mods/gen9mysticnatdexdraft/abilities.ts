@@ -532,7 +532,7 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
-				target.hp = 0;
+				target.hp = 1;
 				this.actions.useMove('healingwish', target);
 			}
 		},
@@ -568,7 +568,7 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
-				target.hp = 0;
+				target.hp = 1;
 				this.actions.useMove('healingwish', target);
 			}
 		},
