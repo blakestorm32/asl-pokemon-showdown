@@ -532,13 +532,13 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
-				this.actions.useMove('healingwish', target);
+				this.actions.useMove('healingwish', source);
 			}
 		},
 		flags: {},
 		name: "Burning Cheer",
 		rating: 3.5,
-		num: 316,
+		num: 320,
 	},
 	cheekpouch: {
 		onEatItem(item, pokemon) {
@@ -567,7 +567,7 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
-				this.actions.useMove('healingwish', target);
+				this.actions.useMove('healingwish', source);
 			}
 		},
 		flags: {},

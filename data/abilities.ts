@@ -32,6 +32,8 @@ Ratings and how they work:
 
 */
 
+import { Pokemon } from '../sim';
+
 export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	noability: {
 		isNonstandard: "Past",
@@ -532,7 +534,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
-				this.actions.useMove('healingwish', target);
+				this.actions.useMove('healingwish', source);
 			}
 		},
 		flags: {},
@@ -567,7 +569,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
 			if (!target.hp) {
-				this.actions.useMove('healingwish', target);
+				this.actions.useMove('healingwish', source);
 			}
 		},
 		flags: {},
