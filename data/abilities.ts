@@ -536,6 +536,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!target.hp) {
 				target.hp = 1;
 				this.actions.useMove('healingwish', target);
+				target.hp = 0;
 			}
 		},
 		flags: {},
@@ -572,6 +573,7 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 			if (!target.hp) {
 				target.hp = 1;
 				this.actions.useMove('healingwish', target);
+				target.hp = 0;
 			}
 		},
 		flags: {},
