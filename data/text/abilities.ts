@@ -834,7 +834,7 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	},
 	juiceboost: {
 		name: "Juice Boost",
-		shortDesc: "This Pokemon eats two berries upon switch-in, its highest offensive and defensive stats raise by 1 stage.",
+		shortDesc: "This Pokemon eats two berries upon switch-in, the offensive stat boost is based on the user and the defensive is based on the target.",
 	},
 	justified: {
 		name: "Justified",
