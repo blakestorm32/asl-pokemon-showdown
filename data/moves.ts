@@ -10274,7 +10274,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 		category: "Status",
 		isNonstandard: "Past",
 		name: "King's Shield",
-		pp: 10,
+		pp: 5,
 		priority: 4,
 		flags: { noassist: 1, failcopycat: 1, failinstruct: 1 },
 		stallingMove: true,
@@ -10292,11 +10292,7 @@ export const Moves: import('../sim/dex-moves').MoveDataTable = {
 			},
 			onTryHitPriority: 3,
 			onTryHit(target, source, move) {
-				if (!move.flags['protect'] || move.category === 'Status') {
-					if (['gmaxoneblow', 'gmaxrapidflow'].includes(move.id)) return;
-					if (move.isZ || move.isMax) target.getMoveHitData(move).zBrokeProtect = true;
-					return;
-				}
+				if (this.checkMoveBypassesProtect(move, source, target)) return;
 				if (move.smartTarget) {
 					move.smartTarget = false;
 				} else {

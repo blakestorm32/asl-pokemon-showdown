@@ -10289,6 +10289,9 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
+				if (this.checkMoveMakesContact(move, source, target)) {
+					this.boost({ atk: -1 }, source, target, this.dex.getActiveMove("King's Shield"));
+				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
