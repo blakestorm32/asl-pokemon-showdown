@@ -59,13 +59,12 @@ export const Conditions: import('../../../sim/dex-conditions').ModdedConditionDa
         },
 		onBeforeMovePriority: 10,
 		onBeforeMove(pokemon, target, move) {
-			if (move.flags['defrost'] && !(move.id === 'burnup' && !pokemon.hasType('Fire'))) return;
-			if (this.randomChance(1, 5)) {
+			// Optional: still allow "defrost" moves to interact, but NO random thaw
+			if (move.flags['defrost'] && !(move.id === 'burnup' && !pokemon.hasType('Fire'))) {
 				pokemon.cureStatus();
+				this.add('-curestatus', pokemon, 'frz');
 				return;
 			}
-			this.add('cant', pokemon, 'frz');
-			return false;
 		},
 		onModifyMove(move, pokemon) {
 			if (move.flags['defrost']) {
