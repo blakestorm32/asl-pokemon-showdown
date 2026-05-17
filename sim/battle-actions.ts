@@ -1906,27 +1906,36 @@ export class BattleActions {
 	}
 
 	runMegaEvo(pokemon: Pokemon, format: ID) {
-    const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst;
-    if (!speciesid) return false;
+	const speciesid = pokemon.canMegaEvo || pokemon.canUltraBurst;
+	if (!speciesid) return false;
 
-    pokemon.formeChange(speciesid, pokemon.getItem(), true);
+	const wasMega = !!pokemon.canMegaEvo;
+	const wasUltra = !!pokemon.canUltraBurst;
 
-    // ONLY enforce single Mega in non-mod formats
-    const modFormatId = 'gen9mysticnatdexdraft';
+	pokemon.formeChange(speciesid, pokemon.getItem(), true);
 
-    if (this.battle.format.id !== modFormatId) {
-        const wasMega = pokemon.canMegaEvo;
-        for (const ally of pokemon.side.pokemon) {
-            if (wasMega) {
-                ally.canMegaEvo = false;
-            } else {
-                ally.canUltraBurst = null;
-            }
-        }
-    }
+	// This Pokemon has already transformed
+	pokemon.canMegaEvo = null;
+	pokemon.canUltraBurst = null;
 
-    this.battle.runEvent('AfterMega', pokemon);
-    return true;
+	// ONLY enforce one Mega total in standard formats
+	const modFormatId = 'gen9mysticnatdexdraft';
+
+	if (this.battle.format.id !== modFormatId) {
+		for (const ally of pokemon.side.pokemon) {
+			if (wasMega) {
+				ally.canMegaEvo = null;
+			}
+
+			if (wasUltra) {
+				ally.canUltraBurst = null;
+			}
+		}
+	}
+
+	this.battle.runEvent('AfterMega', pokemon);
+
+	return true;
 }
 
 	// Let's Go
