@@ -50231,6 +50231,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			endure: ["8M", "4M"],
 			energyball: ["8M", "7M", "6M", "5M", "4M"],
 			facade: ["8M", "7M", "6M", "5M", "4M"],
+			fierydance: ["9M"],
 			flash: ["6M", "5M", "4M"],
 			flowershield: ["8L1"],
 			frustration: ["7M", "6M", "5M", "4M"],
