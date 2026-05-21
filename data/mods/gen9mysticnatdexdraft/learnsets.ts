@@ -50160,6 +50160,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 		learnset: {
 			aromatherapy: ["8M", "7M", "6M", "5M", "4M"],
 			attract: ["8M", "7M", "6M", "5M", "4M"],
+			bodypress: ["9M"],
 			bulletseed: ["8M", "4M"],
 			captivate: ["4M"],
 			confide: ["7M", "6M"],
