@@ -1226,6 +1226,19 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 3.5,
 		num: 297,
 	},
+	eelevate: {
+		onSourceAfterFaint(length, target, source, effect) {
+			if (effect && effect.effectType === 'Move') {
+				const bestStat = source.getBestStat(true, true);
+				this.boost({ [bestStat]: length }, source);
+			}
+		},
+		// airborneness implemented in sim/pokemon.js:Pokemon#isGrounded
+		flags: { breakable: 1 },
+		name: "Eelevate",
+		rating: 4,
+		num: 322,
+	},
 	effectspore: {
 		onDamagingHit(damage, target, source, move) {
 			if (this.checkMoveMakesContact(move, source, target) && !source.status && source.runStatusImmunity('powder')) {
@@ -1359,6 +1372,26 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		name: "Filter",
 		rating: 3,
 		num: 111,
+	},
+	firemane: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Fire Mane boost');
+				return this.chainModify(1.5);
+			}
+		},
+		onModifySpAPriority: 5,
+		onModifySpA(atk, attacker, defender, move) {
+			if (move.type === 'Fire') {
+				this.debug('Fire Mane boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Fire Mane",
+		rating: 3.5,
+		num: 323,
 	},
 	flamebody: {
 		onDamagingHit(damage, target, source, move) {

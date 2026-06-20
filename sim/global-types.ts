@@ -357,6 +357,7 @@ interface ModdedBattleScriptsData extends Partial<BattleScriptsData> {
 	queue?: ModdedBattleQueue;
 	field?: ModdedField;
 	side?: ModdedBattleSide;
+	clearVolatile?: (this: Pokemon, includeSwitchFlags?: boolean) => void;
 	boost?: (
 		this: Battle, boost: SparseBoostsTable, target: Pokemon, source?: Pokemon | null,
 		effect?: Effect | null, isSecondary?: boolean, isSelf?: boolean
