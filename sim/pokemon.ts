@@ -8,6 +8,7 @@
 import { State } from './state';
 import { toID } from './dex';
 import type { DynamaxOptions, PokemonMoveRequestData, PokemonSwitchRequestData } from './side';
+import { Format } from './dex-formats';
 
 /** A Pokemon's move slot. */
 interface MoveSlot {
@@ -1523,6 +1524,9 @@ export class Pokemon {
 		this.hurtThisTurn = null;
 		this.newlySwitched = true;
 		this.beingCalledBack = false;
+		if (this.battle.format.mod === 'gen9mysticnatdexdraft') {
+			this.timesAttacked = 0;
+		}
 
 		this.volatileStaleness = undefined;
 
