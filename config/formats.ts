@@ -452,7 +452,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	},
 	{
 		name: "[Gen 9] v1.1 Champions NatDex Draft",
-		mod: 'gen9-1.1championsnatdexdraft',
+		mod: 'gen9v11championsnatdexdraft',
 		searchShow: false,
 		teraPreviewDefault: true,
 		ruleset: ['Standard Draft', '+Unobtainable', '+Past', 'Min Source Gen = 1'],
