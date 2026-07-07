@@ -60450,6 +60450,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			swift: ["8M"],
 			tailwind: ["8L36", "7T", "6T", "5T"],
 			taunt: ["8M", "7M", "6M", "5M"],
+			terablast: ["9M"],
 			thrash: ["8L46", "7L61", "6L61", "5L61"],
 			torment: ["7M", "6M", "5M"],
 			toxic: ["7M", "6M", "5M"],
