@@ -521,14 +521,14 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		onModifyAtk(atk, attacker, defender, move) {
 			if (move.type === 'Fire') {
 				this.debug('Burning Cheer boost');
-				return this.chainModify(1.2);
+				return this.chainModify(1.5);
 			}
 		},
 		onModifySpAPriority: 5,
 		onModifySpA(atk, attacker, defender, move) {
 			if (move.type === 'Fire') {
 				this.debug('Burning Cheer boost');
-				return this.chainModify(1.2);
+				return this.chainModify(1.5);
 			}
 		},
 		onDamagingHitOrder: 1,
