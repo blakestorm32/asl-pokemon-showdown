@@ -77749,6 +77749,7 @@ export const Learnsets: import('../sim/dex-species').LearnsetDataTable = {
 			tackle: ["8L1", "7L1"],
 			takedown: ["8L24", "7L30"],
 			taunt: ["8M", "7M"],
+			terablast: ["9M"],
 			thrash: ["8L42", "7L43"],
 			thunderpunch: ["8M", "7T"],
 			toxic: ["7M"],
