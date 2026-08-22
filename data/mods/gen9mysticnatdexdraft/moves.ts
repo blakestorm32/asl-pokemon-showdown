@@ -1052,6 +1052,9 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 						delete source.volatiles['lockedmove'];
 					}
 				}
+				if (this.checkMoveMakesContact(move, source, target)) {
+					source.trySetStatus('psn', target);
+				}
 				return this.NOT_FAIL;
 			},
 			onHit(target, source, move) {
@@ -1060,7 +1063,6 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 				}
 			},
 		},
-		secondary: null,
 		target: "self",
 		type: "Poison",
 		zMove: { boost: { def: 1 } },
