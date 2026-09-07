@@ -12920,7 +12920,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		baseForme: "M",
 		types: ["Psychic"],
 		gender: "M",
-		baseStats: { hp: 74, atk: 48, def: 76, spa: 83, spd: 101, spe: 94 },
+		baseStats: { hp: 74, atk: 48, def: 76, spa: 83, spd: 101, spe: 104 },
 		abilities: { 0: "Magic Bounce", 1: "Fur Coat", H: "Prankster" },
 		heightm: 0.6,
 		weightkg: 8.5,
