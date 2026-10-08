@@ -1076,7 +1076,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Barb Barrage",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		onBasePower(basePower, pokemon, target) {
 			if (target.status === 'psn' || target.status === 'tox') {
 				return this.chainModify(2);
@@ -1665,7 +1665,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Bolt Beak",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		secondary: null,
 		target: "normal",
 		type: "Electric",
@@ -1822,7 +1822,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Branch Poke",
 		pp: 40,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, piercing: 1 },
 		secondary: null,
 		target: "normal",
 		type: "Grass",
@@ -4417,7 +4417,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Drill Peck",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1, piercing: 1 },
 		secondary: null,
 		target: "any",
 		type: "Flying",
@@ -4431,7 +4431,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Drill Run",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		critRatio: 2,
 		secondary: null,
 		target: "normal",
@@ -5385,7 +5385,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Fell Stinger",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		onAfterMoveSecondarySelf(pokemon, target, move) {
 			if (!target || target.fainted || target.hp <= 0) this.boost({ atk: 3 }, pokemon, pokemon, move);
 		},
@@ -6502,7 +6502,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Fury Attack",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -6841,7 +6841,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Glacial Lance",
 		pp: 5,
 		priority: 0,
-		flags: { protect: 1, mirror: 1 },
+		flags: { protect: 1, mirror: 1, piercing: 1 },
 		secondary: null,
 		target: "allAdjacentFoes",
 		type: "Ice",
@@ -9284,7 +9284,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Horn Attack",
 		pp: 25,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -9315,7 +9315,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Horn Leech",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, heal: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, heal: 1, metronome: 1, piercing: 1 },
 		drain: [1, 2],
 		secondary: null,
 		target: "normal",
@@ -9456,7 +9456,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Hyper Drill",
 		pp: 5,
 		priority: 0,
-		flags: { contact: 1, mirror: 1 },
+		flags: { contact: 1, mirror: 1, piercing: 1 },
 		secondary: null,
 		target: "normal",
 		type: "Normal",
@@ -11986,7 +11986,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Megahorn",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		secondary: null,
 		target: "normal",
 		type: "Bug",
@@ -13669,7 +13669,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Peck",
 		pp: 35,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1, piercing: 1 },
 		secondary: null,
 		target: "any",
 		type: "Flying",
@@ -13898,7 +13898,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Pluck",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, distance: 1, metronome: 1, piercing: 1 },
 		onHit(target, source, move) {
 			const item = target.getItem();
 			if (source.hp && item.isBerry && target.takeItem(source)) {
@@ -13956,7 +13956,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Poison Jab",
 		pp: 20,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		secondary: {
 			chance: 30,
 			status: 'psn',
@@ -13989,7 +13989,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Poison Sting",
 		pp: 35,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		secondary: {
 			chance: 30,
 			status: 'psn',
@@ -17611,7 +17611,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Smart Strike",
 		pp: 10,
 		priority: 0,
-		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1 },
+		flags: { contact: 1, protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		secondary: null,
 		target: "normal",
 		type: "Steel",
@@ -18115,7 +18115,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Spike Cannon",
 		pp: 15,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		multihit: [2, 5],
 		secondary: null,
 		target: "normal",
@@ -18253,7 +18253,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Spirit Shackle",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		secondary: {
 			chance: 100,
 			onHit(target, source, move) {
@@ -20035,7 +20035,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Thousand Arrows",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, nonsky: 1 },
+		flags: { protect: 1, mirror: 1, nonsky: 1, piercing: 1 },
 		onEffectiveness(typeMod, target, type, move) {
 			if (move.type !== 'Ground') return;
 			if (!target) return; // avoid crashing when called from a chat plugin
@@ -20710,7 +20710,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Triple Arrows",
 		pp: 10,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		critRatio: 2,
 		secondaries: [
 			{
@@ -20871,7 +20871,7 @@ export const Moves: import('../../../sim/dex-moves').MoveDataTable = {
 		name: "Twineedle",
 		pp: 20,
 		priority: 0,
-		flags: { protect: 1, mirror: 1, metronome: 1 },
+		flags: { protect: 1, mirror: 1, metronome: 1, piercing: 1 },
 		multihit: 2,
 		secondary: {
 			chance: 20,

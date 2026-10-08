@@ -34,6 +34,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 
 		start: "  The effects of the weather disappeared.",
 	},
+	alphaunion: {
+		name: "Alpha Union",
+		shortDesc: "This Pokemon gains additional power and its type changes to the type of the move it is using. Unlimited uses.",
+	},
 	analytic: {
 		name: "Analytic",
 		desc: "The power of this Pokemon's move is multiplied by 1.3 if it is the last to move in a turn. Does not affect Doom Desire and Future Sight.",
@@ -187,6 +191,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 			shortDesc: "At 1/3 or less of its max HP, this Pokemon's Fire-type attacks have 1.5x power.",
 		},
 	},
+	brittlearmor: {
+		name: "Brittle Armor",
+		shortDesc: "If this Pokemon is hit by a physical attack, Steel Spikes are set on the opposing side.",
+	},
 	bulletproof: {
 		name: "Bulletproof",
 		shortDesc: "This Pokemon is immune to bullet moves.",
@@ -288,6 +296,13 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Cursed Body",
 		desc: "If this Pokemon is hit by an attack, there is a 30% chance that move gets disabled unless one of the attacker's moves is already disabled.",
 		shortDesc: "If this Pokemon is hit by an attack, there is a 30% chance that move gets disabled.",
+	},
+	cursedcloak: {
+		name: "Cursed Cloak",
+		desc: "Pokemon not making contact with this Pokemon lose 1/8 of their maximum HP, rounded down.",
+		shortDesc: "Pokemon not making contact with this Pokemon lose 1/8 of their max HP.",
+
+		damage: "  [POKEMON] was hurt!",
 	},
 	cutecharm: {
 		name: "Cute Charm",
@@ -518,6 +533,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		},
 
 		start: "  The power of [POKEMON]'s Fire-type moves rose!",
+	},
+	flashfreeze: {
+		name: "Flash Freeze",
+		desc: "This Pokemon's moves have a 30% chance of freezing. This effect comes after a move's inherent secondary effect chance.",
+		shortDesc: "This Pokemon's moves have a 30% chance of freezing.",
 	},
 	flowergift: {
 		name: "Flower Gift",
@@ -1320,6 +1340,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		desc: "If this Pokemon is a Pecharunt and poisons or badly poisons a target, the target also becomes confused.",
 		shortDesc: "Pecharunt: If this Pokemon poisons a target, the target also becomes confused.",
 	},
+	poisonquills: {
+		name: "Poison Quills",
+		desc: "This Pokemon's contact moves have a 30% chance of poisoning. Making contact with this Pokemon also has a 30% chance of poisoning.",
+		shortDesc: "This Pokemon's contact moves and making contact with this Pokemon has a 30% chance of poisoning.",
+	},
 	poisontouch: {
 		name: "Poison Touch",
 		desc: "This Pokemon's contact moves have a 30% chance of poisoning. This effect comes after a move's inherent secondary effect chance.",
@@ -1408,6 +1433,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		activateFromItem: "  [POKEMON] used its Booster Energy to activate Protosynthesis!",
 		start: "  [POKEMON]'s [STAT] was heightened!",
 		end: "  The effects of [POKEMON]'s Protosynthesis wore off!",
+	},
+	proxyconvert: {
+		name: "Proxy Convert",
+		desc: "This Pokemon's type changes to match the type of the move in its first slot.",
+		shortDesc: "This Pokemon's type changes to match the type of the move in its first slot.",
 	},
 	psychicsurge: {
 		name: "Psychic Surge",
@@ -1546,6 +1576,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		},
 
 		damage: "  [POKEMON] was hurt!",
+	},
+	royalpower: {
+		name: "Royal Power",
+		shortDesc: "This Pokemon's Special Attack is doubled.",
 	},
 	runaway: {
 		name: "Run Away",
@@ -1708,6 +1742,10 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 			shortDesc: "This Pokemon's stat stages are considered doubled during stat calculations.",
 		},
 	},
+	skewer: {
+		name: "Skewer",
+		shortDesc: "This Pokemon's piercing moves have their power multiplied by 1.5.",
+	},
 	skilllink: {
 		name: "Skill Link",
 		desc: "This Pokemon's multi-hit attacks always hit the maximum number of times. Triple Kick and Triple Axel do not check accuracy for the second and third hits.",
@@ -1843,6 +1881,17 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 		name: "Steam Engine",
 		desc: "This Pokemon's Speed is raised by 6 stages after it is damaged by a Fire- or Water-type move.",
 		shortDesc: "This Pokemon's Speed is raised by 6 stages after it is damaged by Fire/Water moves.",
+	},
+	steampowered: {
+		name: "Steam Powered",
+		desc: "This Pokemon is immune to Water-type and Fire-type moves and raises its Attack and Special Attack by 2 stages when hit.",
+		shortDesc: "This Pokemon is immune to Water and Fire moves and raises Atk and Sp. Atk by 2.",
+		gen4: {
+			desc: "If this Pokemon is not the target of a single-target Water-type move used by another Pokemon, this Pokemon redirects that move to itself.",
+			shortDesc: "This Pokemon draws single-target Water moves to itself.",
+		},
+
+		activate: "#lightningrod",
 	},
 	steelworker: {
 		name: "Steelworker",
@@ -2093,6 +2142,11 @@ export const AbilitiesText: { [id: IDEntry]: AbilityText } = {
 	toxicdebris: {
 		name: "Toxic Debris",
 		shortDesc: "If this Pokemon is hit by a physical attack, Toxic Spikes are set on the opposing side.",
+	},
+	toxinabsorb: {
+		name: "Toxic Absorb",
+		desc: "This Pokemon is immune to Poison-type moves and restores 1/4 of its maximum HP, rounded down, when hit by a Poison-type move.",
+		shortDesc: "This Pokemon heals 1/4 of its max HP when hit by Poison moves; Poison immunity.",
 	},
 	trace: {
 		name: "Trace",

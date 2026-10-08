@@ -133,6 +133,20 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		rating: 1.5,
 		num: 76,
 	},
+	alphaunion: {
+		onPrepareHit(source, target, move) {
+			if (move.hasBounced || move.flags['futuremove'] || move.sourceEffect === 'snatch' || move.callsMove) return;
+			const type = move.type;
+			if (type && type !== '???' && source.getTypes().join() !== type) {
+				if (!source.setType(type)) return;
+				this.add('-start', source, 'typechange', type, '[from] ability: Alpha Union');
+			}
+		},
+		flags: {},
+		name: "Alpha Union",
+		rating: 4,
+		num: 333,
+	},
 	analytic: {
 		onBasePowerPriority: 21,
 		onBasePower(basePower, pokemon) {
@@ -501,6 +515,20 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Blaze",
 		rating: 2,
 		num: 66,
+	},
+	brittlearmor: {
+		onDamagingHit(damage, target, source, move) {
+			const side = source.isAlly(target) ? source.side.foe : source.side;
+			const gmaxsteelsurge = side.sideConditions['gmaxsteelsurge'];
+			if (move.category === 'Physical') {
+				this.add('-activate', target, 'ability: Brittle Armor');
+				side.addSideCondition('gmaxsteelsurge', target);
+			}
+		},
+		flags: {},
+		name: "Brittle Armor",
+		rating: 3.5,
+		num: 328,
 	},
 	bulletproof: {
 		onTryHit(pokemon, target, move) {
@@ -888,6 +916,18 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Cute Charm",
 		rating: 0.5,
 		num: 56,
+	},
+	cursedcloak: {
+		onDamagingHitOrder: 1,
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target, false)) {
+				this.damage(source.baseMaxhp / 8, source, target);
+			}
+		},
+		flags: {},
+		name: "Cursed Cloak",
+		rating: 2.5,
+		num: 326,
 	},
 	damp: {
 		onAnyTryMove(target, source, effect) {
@@ -1456,6 +1496,17 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Flash Fire",
 		rating: 3.5,
 		num: 18,
+	},
+	flashfreeze: {
+		onSourceDamagingHit(damage, target, source, move) {
+			if (this.randomChance(3, 10)) {
+				target.trySetStatus('frz', source);
+			}
+		},
+		flags: {},
+		name: "Flash Freeze",
+		rating: 2,
+		num: 331,
 	},
 	flowergift: {
 		onSwitchInPriority: -2,
@@ -3519,6 +3570,28 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		rating: 3,
 		num: 310,
 	},
+	poisonquills: {
+		onDamagingHit(damage, target, source, move) {
+			if (this.checkMoveMakesContact(move, source, target)) {
+				if (this.randomChance(3, 10)) {
+					source.trySetStatus('psn', target);
+				}
+			}
+		},
+		onSourceDamagingHit(damage, target, source, move) {
+			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
+			if (target.hasAbility('shielddust') || target.hasItem('covertcloak')) return;
+			if (this.checkMoveMakesContact(move, target, source)) {
+				if (this.randomChance(3, 10)) {
+					target.trySetStatus('psn', source);
+				}
+			}
+		},
+		flags: {},
+		name: "Poison Quills",
+		rating: 1.5,
+		num: 324,
+	},
 	poisontouch: {
 		onSourceDamagingHit(damage, target, source, move) {
 			// Despite not being a secondary, Shield Dust / Covert Cloak block Poison Touch's effect
@@ -3728,6 +3801,17 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Protosynthesis",
 		rating: 3,
 		num: 281,
+	},
+	proxyconvert: {
+		onStart(source) {
+			const type = this.dex.moves.get(source.moveSlots[0].id).type;
+			if (source.hasType(type) || !source.setType(type)) return false;
+			this.add('-start', source, 'typechange', type);
+		},
+		flags: {},
+		name: "Proxy Convert",
+		rating: 4,
+		num: 332,
 	},
 	psychicsurge: {
 		onStart(source) {
@@ -4099,6 +4183,16 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		rating: 2.5,
 		num: 24,
 	},
+	royalpower: {
+		onModifyAtkPriority: 5,
+		onModifyAtk(spa) {
+			return this.chainModify(2);
+		},
+		flags: {},
+		name: "Royal Power",
+		rating: 5,
+		num: 329,
+	},
 	runaway: {
 		flags: {},
 		name: "Run Away",
@@ -4446,6 +4540,19 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		rating: 4,
 		num: 86,
 	},
+	skewer: {
+		onBasePowerPriority: 19,
+		onBasePower(basePower, attacker, defender, move) {
+			if (move.flags['piercing']) {
+				this.debug('Skewer boost');
+				return this.chainModify(1.5);
+			}
+		},
+		flags: {},
+		name: "Skewer",
+		rating: 3.5,
+		num: 327,
+	},
 	skilllink: {
 		onModifyMove(move) {
 			if (move.multihit && Array.isArray(move.multihit) && move.multihit.length) {
@@ -4712,6 +4819,20 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Steam Engine",
 		rating: 2,
 		num: 243,
+	},
+	steampowered: {
+		onTryHit(target, source, move) {
+			if (target !== source && (move.type === 'Water' || move.type === 'Fire')) {
+				if (!this.boost({ atk: 2, spa: 2 })) {
+					this.add('-immune', target, '[from] ability: Steam Powered');
+				}
+				return null;
+			}
+		},
+		flags: { breakable: 1 },
+		name: "Steam Powered",
+		rating: 3,
+		num: 330,
 	},
 	steelworker: {
 		onModifyAtkPriority: 5,
@@ -5268,6 +5389,33 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		name: "Toxic Debris",
 		rating: 3.5,
 		num: 295,
+	},
+	toxinabsorb: {
+		onTryHit(target, source, move) {
+			if (target !== source && move.type === 'Poison') {
+				if (!this.heal(target.baseMaxhp / 4)) {
+					this.add('-immune', target, '[from] ability: Toxin Absorb');
+				}
+				return null;
+			}
+		},
+		onUpdate(pokemon) {
+			if (pokemon.status === 'psn' || pokemon.status === 'tox') {
+				this.add('-activate', pokemon, 'ability: Immunity');
+				pokemon.cureStatus();
+			}
+		},
+		onSetStatus(status, target, source, effect) {
+			if (status.id !== 'psn' && status.id !== 'tox') return;
+			if ((effect as Move)?.status) {
+				this.add('-immune', target, '[from] ability: Immunity');
+			}
+			return false;
+		},
+		flags: { breakable: 1 },
+		name: "Toxin Absorb",
+		rating: 3.5,
+		num: 325,
 	},
 	trace: {
 		onStart(pokemon) {
