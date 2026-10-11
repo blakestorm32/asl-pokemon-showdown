@@ -499,6 +499,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Spearow",
 		evoLevel: 20,
 		eggGroups: ["Flying"],
+		otherFormes: ["Fearow-Mega"],
+		formeOrder: ["Fearow", "Fearow-Mega"],
 	},
 	fearowmega: {
 		num: 22,
@@ -907,8 +909,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Sandshrew",
 		evoLevel: 22,
 		eggGroups: ["Field"],
-		otherFormes: ["Sandslash-Alola"],
-		formeOrder: ["Sandslash", "Sandslash-Alola"],
+		otherFormes: ["Sandslash-Alola", "Sandslash-Mega"],
+		formeOrder: ["Sandslash", "Sandslash-Alola", "Sandslash-Mega"],
 	},
 	sandslashmega: {
 		num: 28,
@@ -1783,6 +1785,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Tentacool",
 		evoLevel: 30,
 		eggGroups: ["Water 3"],
+		otherFormes: ["Tentacruel-Mega"],
+		formeOrder: ["Tentacruel", "Tentacruel-Mega"],
 	},
 	tentacruelmega: {
 		num: 73,
@@ -2785,6 +2789,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Goldeen",
 		evoLevel: 33,
 		eggGroups: ["Water 2"],
+		otherFormes: ["Seaking-Mega"],
+		formeOrder: ["Seaking", "Seaking-Mega"],
 	},
 	seakingmega: {
 		num: 119,
@@ -3788,6 +3794,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Ledyba",
 		evoLevel: 18,
 		eggGroups: ["Bug"],
+		otherFormes: ["Ledian-Mega"],
+		formeOrder: ["Ledian", "Ledian-Mega"],
 	},
 	ledianmega: {
 		num: 166,
@@ -4348,8 +4356,9 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 5,
 		color: "Black",
 		eggGroups: ["Undiscovered"],
+		otherFormes: ["Unown-Mega"],
 		cosmeticFormes: ["Unown-B", "Unown-C", "Unown-D", "Unown-E", "Unown-F", "Unown-G", "Unown-H", "Unown-I", "Unown-J", "Unown-K", "Unown-L", "Unown-M", "Unown-N", "Unown-O", "Unown-P", "Unown-Q", "Unown-R", "Unown-S", "Unown-T", "Unown-U", "Unown-V", "Unown-W", "Unown-X", "Unown-Y", "Unown-Z", "Unown-Exclamation", "Unown-Question"],
-		formeOrder: ["Unown", "Unown-B", "Unown-C", "Unown-D", "Unown-E", "Unown-F", "Unown-G", "Unown-H", "Unown-I", "Unown-J", "Unown-K", "Unown-L", "Unown-M", "Unown-N", "Unown-O", "Unown-P", "Unown-Q", "Unown-R", "Unown-S", "Unown-T", "Unown-U", "Unown-V", "Unown-W", "Unown-X", "Unown-Y", "Unown-Z", "Unown-Exclamation", "Unown-Question"],
+		formeOrder: ["Unown", "Unown-Mega", "Unown-B", "Unown-C", "Unown-D", "Unown-E", "Unown-F", "Unown-G", "Unown-H", "Unown-I", "Unown-J", "Unown-K", "Unown-L", "Unown-M", "Unown-N", "Unown-O", "Unown-P", "Unown-Q", "Unown-R", "Unown-S", "Unown-T", "Unown-U", "Unown-V", "Unown-W", "Unown-X", "Unown-Y", "Unown-Z", "Unown-Exclamation", "Unown-Question"],
 	},
 	unownmega: {
 		num: 201,
@@ -6400,6 +6409,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Spoink",
 		evoLevel: 32,
 		eggGroups: ["Field"],
+		otherFormes: ["Grumpig-Mega"],
+		formeOrder: ["Grumpig", "Grumpig-Mega"],
 	},
 	grumpigmega: {
 		num: 326,
@@ -8306,6 +8317,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Stunky",
 		evoLevel: 34,
 		eggGroups: ["Field"],
+		otherFormes: ["Skuntank-Mega"],
+		formeOrder: ["Skuntank", "Skuntank-Mega"],
 	},
 	skuntankmmega: {
 		num: 435,
@@ -8959,6 +8972,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evoType: "trade",
 		evoItem: "Dubious Disc",
 		eggGroups: ["Mineral"],
+		otherFormes: ["Porygon-Z-Mega"],
+		formeOrder: ["Porygon-Z", "Porygon-Z-Mega"],
 	},
 	porygonzmega: {
 		num: 474,
@@ -11972,6 +11987,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 58,
 		color: "Red",
 		eggGroups: ["Field"],
+		otherFormes: ["Heatmor-Mega"],
+		formeOrder: ["Heatmor", "Heatmor-Mega"],
 	},
 	heatmormega: {
 		num: 631,
@@ -11998,6 +12015,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 33,
 		color: "Gray",
 		eggGroups: ["Bug"],
+		otherFormes: ["Durant-F", "Durant-M-Mega", "Durant-F-Mega"],
+		formeOrder: ["Durant", "Durant-F", "Durant-M-Mega", "Durant-F-Mega"],
 	},
 	durantf: {
 		num: 632,
@@ -13306,6 +13325,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		evoType: "trade",
 		evoItem: "Sachet",
 		eggGroups: ["Fairy"],
+		otherFormes: ["Aromatisse-Mega"],
+		formeOrder: ["Aromatisse", "Aromatisse-Mega"],
 	},
 	aromatissemega: {
 		num: 683,
@@ -15497,8 +15518,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 0.7,
 		color: "Yellow",
 		eggGroups: ["Amorphous"],
-		otherFormes: ["Mimikyu-Busted", "Mimikyu-Totem", "Mimikyu-Busted-Totem"],
-		formeOrder: ["Mimikyu", "Mimikyu-Busted", "Mimikyu-Totem", "Mimikyu-Busted-Totem"],
+		otherFormes: ["Mimikyu-Busted", "Mimikyu-Totem", "Mimikyu-Busted-Totem", "Mimikyu-Mega", "Mimikyu-Busted-Mega"],
+		formeOrder: ["Mimikyu", "Mimikyu-Busted", "Mimikyu-Totem", "Mimikyu-Busted-Totem", "Mimikyu-Mega", "Mimikyu-Busted-Mega"],
 	},
 	mimikyubusted: {
 		num: 778,
@@ -18957,6 +18978,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		prevo: "Tinkatuff",
 		evoLevel: 38,
 		eggGroups: ["Fairy"],
+		otherFormes: ["Tinkaton-Mega"],
+		formeOrder: ["Tinkaton", "Tinkaton-Mega"],
 	},
 	tinkatonmega: {
 		num: 959,
