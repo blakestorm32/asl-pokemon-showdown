@@ -352,6 +352,17 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		rating: 1,
 		num: 188,
 	},
+	auraguard: {
+		onSourceModifyDamage(damage, source, target, move) {
+			let mod = 1;
+			if (move.flags['contact']) mod /= 2;
+			return this.chainModify(mod);
+		},
+		flags: { breakable: 1 },
+		name: "Aura Guard",
+		rating: 3.5,
+		num: 334,
+	},
 	baddreams: {
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
@@ -4194,6 +4205,14 @@ export const Abilities: import('../../../sim/dex-abilities').AbilityDataTable = 
 		num: 329,
 	},
 	runaway: {
+        onTrapPokemonPriority: -10,
+        onTrapPokemon(pokemon) {
+            pokemon.trapped = false;
+        },
+        onMaybeTrapPokemonPriority: -10,
+        onMaybeTrapPokemon(pokemon) {
+            pokemon.maybeTrapped = false;
+        },
 		flags: {},
 		name: "Run Away",
 		rating: 0,

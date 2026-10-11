@@ -354,6 +354,17 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		rating: 1,
 		num: 188,
 	},
+	auraguard: {
+		onSourceModifyDamage(damage, source, target, move) {
+			let mod = 1;
+			if (move.flags['contact']) mod /= 2;
+			return this.chainModify(mod);
+		},
+		flags: { breakable: 1 },
+		name: "Aura Guard",
+		rating: 3.5,
+		num: 334,
+	},
 	baddreams: {
 		onResidualOrder: 28,
 		onResidualSubOrder: 2,
