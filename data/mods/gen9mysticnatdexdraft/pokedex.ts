@@ -4371,6 +4371,7 @@ export const Pokedex: import('../../../sim/dex-species').SpeciesDataTable = {
 		weightkg: 14.0,
 		color: "Black",
 		eggGroups: ["Undiscovered"],
+		requiredItem: "Mysticite",
 	},
 	wobbuffet: {
 		num: 202,
