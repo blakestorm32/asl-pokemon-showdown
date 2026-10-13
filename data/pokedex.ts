@@ -8320,7 +8320,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		otherFormes: ["Skuntank-Mega"],
 		formeOrder: ["Skuntank", "Skuntank-Mega"],
 	},
-	skuntankmmega: {
+	skuntankmega: {
 		num: 435,
 		name: "Skuntank-Mega",
 		baseSpecies: "Skuntank",
@@ -12015,8 +12015,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 33,
 		color: "Gray",
 		eggGroups: ["Bug"],
-		otherFormes: ["Durant-F", "Durant-M-Mega", "Durant-F-Mega"],
-		formeOrder: ["Durant", "Durant-F", "Durant-M-Mega", "Durant-F-Mega"],
+		otherFormes: ["Durant-M-Mega"],
+		formeOrder: ["Durant", "Durant-M-Mega"],
 	},
 	durantf: {
 		num: 632,
@@ -12030,6 +12030,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 33,
 		color: "Gray",
 		eggGroups: ["Bug"],
+		otherFormes: ["Durant-F-Mega"],
+		formeOrder: ["Durant-F", "Durant-F-Mega"],
 	},
 	durantmmega: {
 		num: 632,
@@ -13334,7 +13336,7 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		baseSpecies: "Aromatisse",
 		forme: "Mega",
 		types: ["Fairy", "Poison"],
-		baseStats: { hp: 101, atk: 82, def: 101, spa: 132, spd: 107, spe: 29 },
+		baseStats: { hp: 101, atk: 82, def: 106, spa: 132, spd: 112, spe: 29 },
 		abilities: { 0: "Toxin Absorb" },
 		heightm: 0.8,
 		weightkg: 15.7,
@@ -15518,8 +15520,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		weightkg: 0.7,
 		color: "Yellow",
 		eggGroups: ["Amorphous"],
-		otherFormes: ["Mimikyu-Busted", "Mimikyu-Totem", "Mimikyu-Busted-Totem", "Mimikyu-Mega", "Mimikyu-Busted-Mega"],
-		formeOrder: ["Mimikyu", "Mimikyu-Busted", "Mimikyu-Totem", "Mimikyu-Busted-Totem", "Mimikyu-Mega", "Mimikyu-Busted-Mega"],
+		otherFormes: ["Mimikyu-Mega", "Mimikyu-Busted"],
+		formeOrder: ["Mimikyu", "Mimikyu-Mega", "Mimikyu-Busted"],
 	},
 	mimikyubusted: {
 		num: 778,
@@ -15534,7 +15536,8 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 		color: "Yellow",
 		eggGroups: ["Amorphous"],
 		requiredAbility: "Disguise",
-		battleOnly: "Mimikyu",
+		otherFormes: ["Mimikyu-Busted-Mega"],
+		formeOrder: ["Mimikyu-Busted", "Mimikyu-Busted-Mega"],
 	},
 	mimikyumega: {
 		num: 778,

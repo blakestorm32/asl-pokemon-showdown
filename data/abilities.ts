@@ -920,7 +920,10 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 	cursedcloak: {
 		onDamagingHitOrder: 1,
 		onDamagingHit(damage, target, source, move) {
-			if (this.checkMoveMakesContact(move, source, target, false)) {
+			if (this.checkMoveMakesContact(move, source, target, true)) {
+				return
+			}
+			else {
 				this.damage(source.baseMaxhp / 8, source, target);
 			}
 		},
@@ -4189,8 +4192,8 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 24,
 	},
 	royalpower: {
-		onModifyAtkPriority: 5,
-		onModifyAtk(spa) {
+		onModifySpAPriority: 5,
+		onModifySpA(spa) {
 			return this.chainModify(2);
 		},
 		flags: {},
@@ -4826,12 +4829,9 @@ export const Abilities: import('../sim/dex-abilities').AbilityDataTable = {
 		num: 243,
 	},
 	steampowered: {
-		onTryHit(target, source, move) {
-			if (target !== source && (move.type === 'Water' || move.type === 'Fire')) {
-				if (!this.boost({ atk: 2, spa: 2 })) {
-					this.add('-immune', target, '[from] ability: Steam Powered');
-				}
-				return null;
+		onDamagingHit(damage, target, source, move) {
+			if (['Water', 'Fire'].includes(move.type)) {
+				this.boost({ atk: 2, spa: 2 });
 			}
 		},
 		flags: { breakable: 1 },
