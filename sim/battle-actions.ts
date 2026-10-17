@@ -1914,7 +1914,7 @@ export class BattleActions {
 					'mimikyubusted',
 					'mimikyubustedtotem',
 				].includes(pokemon.species.id) &&
-				item.megaEvolves === species.baseSpecies
+				item.megaEvolves === 'Mimikyu'
 			) {
 				if (
 					pokemon.species.id === 'mimikyubusted' ||
