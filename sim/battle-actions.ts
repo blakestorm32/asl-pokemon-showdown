@@ -1880,6 +1880,33 @@ export class BattleActions {
 			pokemon.baseMoves.includes(toID(altForme.requiredMove)) && !item.zMove) {
 			return altForme.name;
 		}
+		// Mega Durant: separate male and female forms
+		if (species.baseSpecies === "Durant" && item.megaEvolves === "Durant") {
+    		return pokemon.gender === "F"
+        		? "Durant-Mega-F"
+        		: "Durant-Mega-M";
+		}
+		// Mega Mimikyu: choose Mega form based on Disguise state
+		if (
+ 			['mimikyu', 'mimikyutotem', 'mimikyubusted', 'mimikyubustedtotem']
+    		    .includes(pokemon.species.id) &&
+    		item.megaEvolves === species.baseSpecies
+		) {
+    		if (
+        		pokemon.species.id === 'mimikyubusted' ||
+        		pokemon.species.id === 'mimikyubustedtotem'
+    		) {
+        		return 'Mimikyu-Mega-Busted';
+    		}
+    		return 'Mimikyu-Mega';
+		}
+		// Only Kantonian Sandslash can Mega Evolve into Mega Sandslash
+		if (
+    		species.name === "Sandslash-Alola" &&
+    		item.megaStone === "Sandslash-Mega"
+		) {
+    		return null;
+		}
 		// Temporary hardcode until generation shift
 		if ((species.baseSpecies === "Floette" || species.baseSpecies === "Zygarde") && item.megaEvolves === species.name) {
 			return item.megaStone as string;
