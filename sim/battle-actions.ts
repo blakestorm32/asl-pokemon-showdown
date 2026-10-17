@@ -1920,7 +1920,7 @@ export class BattleActions {
 					pokemon.species.id === 'mimikyubusted' ||
 					pokemon.species.id === 'mimikyubustedtotem'
 				) {
-					return 'Mimikyu-Mega-Busted';
+					return 'Mimikyu-Busted-Mega';
 				}
 				return 'Mimikyu-Mega';
 			}
