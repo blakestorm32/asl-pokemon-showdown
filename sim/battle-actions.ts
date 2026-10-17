@@ -1869,60 +1869,89 @@ export class BattleActions {
 	// #region MEGA EVOLUTION
 	// ==================================================================
 
-	canMegaEvo(pokemon: Pokemon) {
-		const species = pokemon.baseSpecies;
-		const altForme = species.otherFormes && this.dex.species.get(species.otherFormes[0]);
-		const item = pokemon.getItem();
-		// Mega Rayquaza
-		if ((this.battle.gen <= 7 || this.battle.ruleTable.has('+pokemontag:past') ||
-			this.battle.ruleTable.has('+pokemontag:future')) &&
-			altForme?.isMega && altForme?.requiredMove &&
-			pokemon.baseMoves.includes(toID(altForme.requiredMove)) && !item.zMove) {
-			return altForme.name;
+	
+		canMegaEvo(pokemon: Pokemon) {
+			const species = pokemon.baseSpecies;
+			const altForme = species.otherFormes && this.dex.species.get(species.otherFormes[0]);
+			const item = pokemon.getItem();
+
+			// Only Kantonian Sandslash can Mega Evolve using Mysticite
+			if (
+				pokemon.species.id === 'sandslashalola' &&
+				item.id === 'mysticite'
+			) {
+				return null;
+			}
+
+			// Mega Rayquaza
+			if (
+				(this.battle.gen <= 7 ||
+					this.battle.ruleTable.has('+pokemontag:past') ||
+					this.battle.ruleTable.has('+pokemontag:future')) &&
+				altForme?.isMega &&
+				altForme?.requiredMove &&
+				pokemon.baseMoves.includes(toID(altForme.requiredMove)) &&
+				!item.zMove
+			) {
+				return altForme.name;
+			}
+
+			// Mega Durant: separate male and female forms
+			if (
+				species.baseSpecies === 'Durant' &&
+				item.megaEvolves === 'Durant'
+			) {
+				if (pokemon.gender === 'F') return 'Durant-Mega-F';
+				if (pokemon.gender === 'M') return 'Durant-Mega-M';
+				return null;
+			}
+
+			// Mega Mimikyu: choose Mega form based on Disguise state
+			if (
+				[
+					'mimikyu',
+					'mimikyutotem',
+					'mimikyubusted',
+					'mimikyubustedtotem',
+				].includes(pokemon.species.id) &&
+				item.megaEvolves === species.baseSpecies
+			) {
+				if (
+					pokemon.species.id === 'mimikyubusted' ||
+					pokemon.species.id === 'mimikyubustedtotem'
+				) {
+					return 'Mimikyu-Mega-Busted';
+				}
+				return 'Mimikyu-Mega';
+			}
+
+			// Temporary hardcode until generation shift
+			if (
+				(species.baseSpecies === 'Floette' ||
+					species.baseSpecies === 'Zygarde') &&
+				item.megaEvolves === species.name
+			) {
+				return item.megaStone as string;
+			}
+
+			// Multiple Mega forms supported by one item
+			if (Array.isArray(item.megaStone)) {
+				const index = (item.megaEvolves as string[]).indexOf(species.baseSpecies);
+				if (index < 0) return null;
+				return item.megaStone[index];
+			}
+
+			// Standard Mega Evolution
+			if (
+				item.megaEvolves === species.baseSpecies &&
+				item.megaStone !== species.name
+			) {
+				return item.megaStone;
+			}
+
+			return null;
 		}
-		// Mega Durant: separate male and female forms
-		if (species.baseSpecies === "Durant" && item.megaEvolves === "Durant") {
-    		return pokemon.gender === "F"
-        		? "Durant-Mega-F"
-        		: "Durant-Mega-M";
-		}
-		// Mega Mimikyu: choose Mega form based on Disguise state
-		if (
- 			['mimikyu', 'mimikyutotem', 'mimikyubusted', 'mimikyubustedtotem']
-    		    .includes(pokemon.species.id) &&
-    		item.megaEvolves === species.baseSpecies
-		) {
-    		if (
-        		pokemon.species.id === 'mimikyubusted' ||
-        		pokemon.species.id === 'mimikyubustedtotem'
-    		) {
-        		return 'Mimikyu-Mega-Busted';
-    		}
-    		return 'Mimikyu-Mega';
-		}
-		// Only Kantonian Sandslash can Mega Evolve into Mega Sandslash
-		if (
-    		species.name === "Sandslash-Alola" &&
-    		item.megaStone === "Sandslash-Mega"
-		) {
-    		return null;
-		}
-		// Temporary hardcode until generation shift
-		if ((species.baseSpecies === "Floette" || species.baseSpecies === "Zygarde") && item.megaEvolves === species.name) {
-			return item.megaStone as string;
-		}
-		// a hacked-in Megazard X can mega evolve into Megazard Y, but not into Megazard X
-		if (Array.isArray(item.megaStone)) {
-			// FIXME: Change to species.name when champions comes
-			const index = (item.megaEvolves as string[]).indexOf(species.baseSpecies);
-			if (index < 0) return null;
-			return item.megaStone[index];
-			// FIXME: Change to species.name when champions comes
-		} else if (item.megaEvolves === species.baseSpecies && item.megaStone !== species.name) {
-			return item.megaStone;
-		}
-		return null;
-	}
+
 
 	canUltraBurst(pokemon: Pokemon) {
 		if (['Necrozma-Dawn-Wings', 'Necrozma-Dusk-Mane'].includes(pokemon.baseSpecies.name) &&

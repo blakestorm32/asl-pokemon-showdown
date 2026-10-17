@@ -12022,7 +12022,6 @@ export const Pokedex: import('../sim/dex-species').SpeciesDataTable = {
 	durantf: {
 		num: 632,
 		name: "Durant-F",
-		baseSpecies: "Durant",
 		gender: "F",
 		types: ["Bug", "Steel"],
 		baseStats: { hp: 58, atk: 109, def: 112, spa: 48, spd: 48, spe: 109 },
