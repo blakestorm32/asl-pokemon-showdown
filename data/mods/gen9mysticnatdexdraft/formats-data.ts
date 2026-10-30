@@ -410,6 +410,11 @@ export const FormatsData: import('../../../sim/dex-species').SpeciesFormatsDataT
 		tier: "Illegal",
 		natDexTier: "RU",
 	},
+	parasectmega: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
+	},
 	venonat: {
 		tier: "LC",
 	},
@@ -2209,6 +2214,11 @@ export const FormatsData: import('../../../sim/dex-species').SpeciesFormatsDataT
 		natDexTier: "LC",
 	},
 	wailord: {
+		isNonstandard: "Past",
+		tier: "Illegal",
+		natDexTier: "RU",
+	},
+	wailordmega: {
 		isNonstandard: "Past",
 		tier: "Illegal",
 		natDexTier: "RU",
@@ -4782,11 +4792,6 @@ export const FormatsData: import('../../../sim/dex-species').SpeciesFormatsDataT
 		natDexTier: "RU",
 	},
 	mimikyumega: {
-		tier: "RU",
-		doublesTier: "(DUU)",
-		natDexTier: "RU",
-	},
-	mimikyubustedmega: {
 		tier: "RU",
 		doublesTier: "(DUU)",
 		natDexTier: "RU",

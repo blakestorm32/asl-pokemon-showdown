@@ -1906,25 +1906,6 @@ export class BattleActions {
 				return null;
 			}
 
-			// Mega Mimikyu: choose Mega form based on Disguise state
-			if (
-				[
-					'mimikyu',
-					'mimikyutotem',
-					'mimikyubusted',
-					'mimikyubustedtotem',
-				].includes(pokemon.species.id) &&
-				item.megaEvolves === 'Mimikyu'
-			) {
-				if (
-					pokemon.species.id === 'mimikyubusted' ||
-					pokemon.species.id === 'mimikyubustedtotem'
-				) {
-					return 'Mimikyu-Busted-Mega';
-				}
-				return 'Mimikyu-Mega';
-			}
-
 			// Temporary hardcode until generation shift
 			if (
 				(species.baseSpecies === 'Floette' ||
